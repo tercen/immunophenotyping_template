@@ -1,6 +1,6 @@
 {
  "kind": "Workflow",
- "id": "22",
+ "id": "20",
  "isDeleted": false,
  "rev": "",
  "description": "Preprocess FCS files and perform automated immunophenotyping using PhenoGraph and UMAP.",
@@ -39,7 +39,7 @@
  "version": "",
  "isPublic": false,
  "projectId": "",
- "folderId": "16",
+ "folderId": "17",
  "links": [
   {
    "kind": "Link",
@@ -428,16 +428,81 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
    "model": {
     "kind": "TableStepModel",
     "relation": {
-     "kind": "UnionRelation",
-     "id": "6adacea9-55a8-4c23-bdfd-ed023ff9bc6d",
-     "relations": []
+     "kind": "RenameRelation",
+     "id": "rename_28e7a7b3-703d-4ba9-a3f9-7d695d3c69fd",
+     "relation": {
+      "kind": "InMemoryRelation",
+      "id": "37af65da-7c35-4405-9f02-9a9556ccdc6e",
+      "inMemoryTable": {
+       "kind": "Table",
+       "nRows": 1,
+       "properties": {
+        "kind": "TableProperties",
+        "name": "",
+        "sortOrder": [],
+        "ascending": true
+       },
+       "columns": [
+        {
+         "kind": "Column",
+         "id": "documentId",
+         "name": "documentId",
+         "type": "string",
+         "nRows": 1,
+         "size": -1,
+         "metaData": {
+          "kind": "ColumnSchemaMetaData",
+          "sort": [],
+          "ascending": true,
+          "quartiles": [],
+          "properties": []
+         },
+         "cValues": {
+          "kind": "CValues"
+         },
+         "values": [
+          "81ace5c4-f8b6-405c-9e27-7e8e15ba9e32"
+         ]
+        },
+        {
+         "kind": "Column",
+         "id": ".documentId",
+         "name": ".documentId",
+         "type": "string",
+         "nRows": 1,
+         "size": -1,
+         "metaData": {
+          "kind": "ColumnSchemaMetaData",
+          "sort": [],
+          "ascending": true,
+          "quartiles": [],
+          "properties": []
+         },
+         "cValues": {
+          "kind": "CValues"
+         },
+         "values": [
+          "workflow_tests/FCS Files.zip"
+         ]
+        }
+       ]
+      }
+     },
+     "inNames": [
+      "documentId",
+      ".documentId"
+     ],
+     "outNames": [
+      "documentId",
+      ".documentId"
+     ]
     },
     "filterSelector": "zip"
    }
@@ -466,7 +531,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -475,8 +540,8 @@
    "version": "",
    "offset": {
     "kind": "Point",
-    "x": 276.0,
-    "y": -49.0
+    "x": 419.0,
+    "y": -33.0
    }
   },
   {
@@ -517,7 +582,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -563,9 +628,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1342ad",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "This step performs Channel Selection, Downsampling and a Logicle Transformation",
@@ -682,21 +747,42 @@
     },
     "columnTable": {
      "kind": "CrosstabTable",
-     "cellSize": 81.92,
+     "cellSize": 250.0,
      "offset": 0,
      "graphicalFactors": [
       {
        "kind": "GraphicalFactor",
        "factor": {
         "kind": "Factor",
-        "name": "event_id",
-        "type": "double"
+        "name": "channel_name",
+        "type": "string"
        },
        "rectangle": {
         "kind": "Rectangle",
         "extent": {
          "kind": "Point",
+         "x": 120.0,
+         "y": 30.0
+        },
+        "topLeft": {
+         "kind": "Point",
          "x": 0.0,
+         "y": 0.0
+        }
+       }
+      },
+      {
+       "kind": "GraphicalFactor",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_description",
+        "type": "string"
+       },
+       "rectangle": {
+        "kind": "Rectangle",
+        "extent": {
+         "kind": "Point",
+         "x": 190.0,
          "y": 30.0
         },
         "topLeft": {
@@ -708,205 +794,12 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 4000
+     "nRows": 47
     },
     "filters": {
      "kind": "Filters",
      "removeNaN": true,
-     "namedFilters": [
-      {
-       "kind": "NamedFilter",
-       "logical": "or",
-       "not": true,
-       "filterExprs": [
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": ".ci",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "SSC-A",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "SSC-B-A",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "SSC-B-H",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "SSC-H",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "Time",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "LIVE DEAD Blue-A",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "Width",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "Center",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "Height",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "Area",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "FSC-H",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        },
-        {
-         "kind": "FilterExpr",
-         "filterOp": "equals",
-         "stringValue": "FSC-A",
-         "factor": {
-          "kind": "Factor",
-          "name": "channel_name",
-          "type": "string"
-         },
-         "preProcessors": []
-        }
-       ],
-       "meta": [],
-       "name": "Exclude QC Channels"
-      },
-      {
-       "kind": "NamedFilter",
-       "logical": "and",
-       "not": false,
-       "filterExprs": [
-        {
-         "kind": "FilterExpr",
-         "filterOp": "lesseq",
-         "stringValue": "1000000000",
-         "factor": {
-          "kind": "Factor",
-          "name": "downsample.random_sequence",
-          "type": "double"
-         },
-         "preProcessors": []
-        }
-       ],
-       "meta": [],
-       "name": "Downsampling # Events"
-      },
-      {
-       "kind": "NamedFilter",
-       "logical": "and",
-       "not": false,
-       "filterExprs": [
-        {
-         "kind": "FilterExpr",
-         "filterOp": "lesseq",
-         "stringValue": "100",
-         "factor": {
-          "kind": "Factor",
-          "name": "downsample.random_percentage",
-          "type": "double"
-         },
-         "preProcessors": []
-        }
-       ],
-       "meta": [],
-       "name": "Downsampling Percentage"
-      }
-     ]
+     "namedFilters": []
     },
     "operatorSettings": {
      "kind": "OperatorSettings",
@@ -914,8 +807,8 @@
      "operatorRef": {
       "kind": "OperatorRef",
       "name": "Logicle",
-      "version": "1.0.2",
-      "operatorId": "5",
+      "version": "2fb17578156e0a8eab738e46f9804f59b1a5a67c",
+      "operatorId": "13",
       "operatorKind": "ROperator",
       "propertyValues": [],
       "url": {
@@ -924,9 +817,86 @@
       },
       "operatorSpec": {
        "kind": "OperatorSpec",
-       "ontologyUri": "",
-       "ontologyVersion": "",
-       "inputSpecs": [],
+       "ontologyUri": "https://tercen.com/_ontology/tercen",
+       "ontologyVersion": "0.0.1",
+       "inputSpecs": [
+        {
+         "kind": "CrosstabSpec",
+         "metaFactors": [
+          {
+           "kind": "MetaFactor",
+           "name": "Channel",
+           "type": "",
+           "description": "The channel name",
+           "ontologyMapping": "page",
+           "crosstabMapping": "column",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "channel_name",
+             "type": "string"
+            }
+           ]
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "Description",
+           "type": "",
+           "description": "The channel description",
+           "ontologyMapping": "page",
+           "crosstabMapping": "column",
+           "cardinality": "",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "channel_description",
+             "type": "string"
+            }
+           ]
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "event ID",
+           "type": "",
+           "description": "the observations",
+           "ontologyMapping": "sample",
+           "crosstabMapping": "row",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "event_id",
+             "type": "double"
+            }
+           ]
+          }
+         ],
+         "axis": [
+          {
+           "kind": "AxisSpec",
+           "metaFactors": [
+            {
+             "kind": "MetaFactor",
+             "name": "data",
+             "type": "numeric",
+             "description": "the measurements",
+             "ontologyMapping": "y-axis",
+             "crosstabMapping": "y",
+             "cardinality": "1",
+             "factors": [
+              {
+               "kind": "Factor",
+               "name": "value",
+               "type": "double"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
        "outputSpecs": []
       }
      },
@@ -963,42 +933,21 @@
     },
     "rowTable": {
      "kind": "CrosstabTable",
-     "cellSize": 65.0,
+     "cellSize": 250.0,
      "offset": 0,
      "graphicalFactors": [
       {
        "kind": "GraphicalFactor",
        "factor": {
         "kind": "Factor",
-        "name": "channel_name",
-        "type": "string"
+        "name": "event_id",
+        "type": "double"
        },
        "rectangle": {
         "kind": "Rectangle",
         "extent": {
          "kind": "Point",
-         "x": 144.0,
-         "y": 0.0
-        },
-        "topLeft": {
-         "kind": "Point",
-         "x": 0.0,
-         "y": 0.0
-        }
-       }
-      },
-      {
-       "kind": "GraphicalFactor",
-       "factor": {
-        "kind": "Factor",
-        "name": "channel_description",
-        "type": "string"
-       },
-       "rectangle": {
-        "kind": "Rectangle",
-        "extent": {
-         "kind": "Point",
-         "x": 190.0,
+         "x": 80.0,
          "y": 30.0
         },
         "topLeft": {
@@ -1010,13 +959,121 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 39
+     "nRows": 4000
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "a1faf98d-d7ca-4697-a546-1723bf4c669d"
+    "kind": "CompositeRelation",
+    "id": "1abe9f1c-d9db-4cc9-9839-f8b07d8078de",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "channel_name",
+        "channel_description",
+        "event_id"
+       ],
+       "rColumns": [
+        "channel_name",
+        "channel_description",
+        "event_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "875975d1-96c7-44a9-9372-92c9dceaa215",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "1982b563-cf0e-4dc2-8fef-ac9df099589b",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5",
+           "index": 0
+          }
+         },
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ri",
+        ".ci",
+        "logicle.value",
+        "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0._rids",
+        "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0.tlbId",
+        "channel_name",
+        "channel_description",
+        "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5._rids",
+        "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5.tlbId",
+        "event_id",
+        "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6._rids",
+        "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6.tlbId",
+        "channel_name",
+        "channel_description",
+        "event_id"
+       ],
+       "outNames": [
+        ".ri",
+        ".ci",
+        "logicle.value",
+        "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0._rids",
+        "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0.tlbId",
+        "channel_name",
+        "channel_description",
+        "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5._rids",
+        "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5.tlbId",
+        "event_id",
+        "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6._rids",
+        "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "logicle..event_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "e004afff-f09b-4d6e-89fc-d59c9b08bd1e"
+    }
    },
    "parentDataStepId": ""
   },
@@ -1056,9 +1113,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc166c29",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -1226,7 +1283,7 @@
       "kind": "OperatorRef",
       "name": "Histogram",
       "version": "0.2.0",
-      "operatorId": "13",
+      "operatorId": "0",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -1311,13 +1368,91 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 40
+     "nRows": 47
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "852a41c9-dd15-4dbc-8e8c-002932acbfce"
+    "kind": "CompositeRelation",
+    "id": "ec84a205-d125-418c-9b88-14ad2c4202af",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "logicle..channel_description"
+       ],
+       "rColumns": [
+        "logicle..channel_description"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "b96193b0-43a2-4ef7-9c5f-559513af590a",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "26539346-44d6-490c-912d-ff3defd8049f",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "9d82a779374e50ea3d81d2675026434a4f869a1a9cc1c3fef5f46d782759de2d._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "9d82a779374e50ea3d81d2675026434a4f869a1a9cc1c3fef5f46d782759de2d",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "eed4fe391d028c0cc2fa77dff909b88cb99158b33bd95f40a9a4772b134fa63c",
+         "index": 0
+        }
+       },
+       "inNames": [
+        "hist.counts",
+        "hist.density",
+        "hist.mids",
+        "hist.bins",
+        ".ri",
+        "eed4fe391d028c0cc2fa77dff909b88cb99158b33bd95f40a9a4772b134fa63c._rids",
+        "eed4fe391d028c0cc2fa77dff909b88cb99158b33bd95f40a9a4772b134fa63c.tlbId",
+        "logicle..channel_description",
+        "9d82a779374e50ea3d81d2675026434a4f869a1a9cc1c3fef5f46d782759de2d._rids",
+        "9d82a779374e50ea3d81d2675026434a4f869a1a9cc1c3fef5f46d782759de2d.tlbId",
+        "logicle..channel_description"
+       ],
+       "outNames": [
+        "hist.counts",
+        "hist.density",
+        "hist.mids",
+        "hist.bins",
+        ".ri",
+        "eed4fe391d028c0cc2fa77dff909b88cb99158b33bd95f40a9a4772b134fa63c._rids",
+        "eed4fe391d028c0cc2fa77dff909b88cb99158b33bd95f40a9a4772b134fa63c.tlbId",
+        "logicle..channel_description",
+        "9d82a779374e50ea3d81d2675026434a4f869a1a9cc1c3fef5f46d782759de2d._rids",
+        "9d82a779374e50ea3d81d2675026434a4f869a1a9cc1c3fef5f46d782759de2d.tlbId",
+        "hist..channel_description"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "94169aaf-d636-497a-b655-64e9bcb629de"
+    }
    },
    "parentDataStepId": ""
   },
@@ -1352,7 +1487,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -1395,7 +1530,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -1429,7 +1564,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -1438,8 +1573,8 @@
    "version": "",
    "offset": {
     "kind": "Point",
-    "x": 263.0,
-    "y": -90.0
+    "x": 594.0,
+    "y": -7.0
    }
   },
   {
@@ -1480,7 +1615,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -1526,9 +1661,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc189bfc",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -1645,21 +1780,42 @@
     },
     "columnTable": {
      "kind": "CrosstabTable",
-     "cellSize": 250.0,
+     "cellSize": 15.666666666666666,
      "offset": 0,
      "graphicalFactors": [
       {
        "kind": "GraphicalFactor",
        "factor": {
         "kind": "Factor",
-        "name": "logicle..event_id",
-        "type": "double"
+        "name": "logicle..channel_name",
+        "type": "string"
        },
        "rectangle": {
         "kind": "Rectangle",
         "extent": {
          "kind": "Point",
+         "x": 210.0,
+         "y": 30.0
+        },
+        "topLeft": {
+         "kind": "Point",
          "x": 0.0,
+         "y": 0.0
+        }
+       }
+      },
+      {
+       "kind": "GraphicalFactor",
+       "factor": {
+        "kind": "Factor",
+        "name": "logicle..channel_description",
+        "type": "string"
+       },
+       "rectangle": {
+        "kind": "Rectangle",
+        "extent": {
+         "kind": "Point",
+         "x": 280.0,
          "y": 30.0
         },
         "topLeft": {
@@ -1671,7 +1827,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 4000
+     "nRows": 47
     },
     "filters": {
      "kind": "Filters",
@@ -1684,8 +1840,8 @@
      "operatorRef": {
       "kind": "OperatorRef",
       "name": "PhenoGraph",
-      "version": "2.0.2",
-      "operatorId": "0",
+      "version": "c4ed0c77d3fe34200a2585544fa2c0cbcefc72ac",
+      "operatorId": "16",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -1696,7 +1852,7 @@
        {
         "kind": "PropertyValue",
         "name": "seed",
-        "value": "42"
+        "value": "-1"
        },
        {
         "kind": "PropertyValue",
@@ -1710,9 +1866,86 @@
       },
       "operatorSpec": {
        "kind": "OperatorSpec",
-       "ontologyUri": "",
-       "ontologyVersion": "",
-       "inputSpecs": [],
+       "ontologyUri": "https://tercen.com/_ontology/tercen",
+       "ontologyVersion": "0.0.1",
+       "inputSpecs": [
+        {
+         "kind": "CrosstabSpec",
+         "metaFactors": [
+          {
+           "kind": "MetaFactor",
+           "name": "Channel",
+           "type": "",
+           "description": "The channel name",
+           "ontologyMapping": "page",
+           "crosstabMapping": "column",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..channel_name",
+             "type": "string"
+            }
+           ]
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "Description",
+           "type": "",
+           "description": "The channel description",
+           "ontologyMapping": "page",
+           "crosstabMapping": "column",
+           "cardinality": "",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..channel_description",
+             "type": "string"
+            }
+           ]
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "event ID",
+           "type": "",
+           "description": "the observations",
+           "ontologyMapping": "sample",
+           "crosstabMapping": "row",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..event_id",
+             "type": "double"
+            }
+           ]
+          }
+         ],
+         "axis": [
+          {
+           "kind": "AxisSpec",
+           "metaFactors": [
+            {
+             "kind": "MetaFactor",
+             "name": "data",
+             "type": "numeric",
+             "description": "the measurements",
+             "ontologyMapping": "y-axis",
+             "crosstabMapping": "y",
+             "cardinality": "1",
+             "factors": [
+              {
+               "kind": "Factor",
+               "name": "logicle.value",
+               "type": "double"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
        "outputSpecs": []
       }
      },
@@ -1749,42 +1982,21 @@
     },
     "rowTable": {
      "kind": "CrosstabTable",
-     "cellSize": 29.0,
+     "cellSize": 0.11566953903592182,
      "offset": 0,
      "graphicalFactors": [
       {
        "kind": "GraphicalFactor",
        "factor": {
         "kind": "Factor",
-        "name": "logicle..channel_name",
-        "type": "string"
+        "name": "logicle..event_id",
+        "type": "double"
        },
        "rectangle": {
         "kind": "Rectangle",
         "extent": {
          "kind": "Point",
-         "x": 210.0,
-         "y": 30.0
-        },
-        "topLeft": {
-         "kind": "Point",
-         "x": 0.0,
-         "y": 0.0
-        }
-       }
-      },
-      {
-       "kind": "GraphicalFactor",
-       "factor": {
-        "kind": "Factor",
-        "name": "logicle..channel_description",
-        "type": "string"
-       },
-       "rectangle": {
-        "kind": "Rectangle",
-        "extent": {
-         "kind": "Point",
-         "x": 132.0,
+         "x": 170.0,
          "y": 30.0
         },
         "topLeft": {
@@ -1796,13 +2008,85 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 39
+     "nRows": 4000
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "b7d28a7b-ca9a-44e4-a517-464322f6042c"
+    "kind": "CompositeRelation",
+    "id": "fd75624e-0e5a-49e7-9c2e-15abdfa100e1",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "logicle..event_id"
+       ],
+       "rColumns": [
+        "logicle..event_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "9f09ead3-7aad-42ef-bc3e-c14b8a93947a",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "2ef7c190-2f93-4d5c-8274-bd8caf2f6f61",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "91dceb2921e2dbcdcedb6dac1abf6f1109d9dcec6b7268573fd61d6cec0ac122",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ri",
+        "clust.cluster_id",
+        "91dceb2921e2dbcdcedb6dac1abf6f1109d9dcec6b7268573fd61d6cec0ac122._rids",
+        "91dceb2921e2dbcdcedb6dac1abf6f1109d9dcec6b7268573fd61d6cec0ac122.tlbId",
+        "logicle..event_id",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1._rids",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1.tlbId",
+        "logicle..event_id"
+       ],
+       "outNames": [
+        ".ri",
+        "clust.cluster_id",
+        "91dceb2921e2dbcdcedb6dac1abf6f1109d9dcec6b7268573fd61d6cec0ac122._rids",
+        "91dceb2921e2dbcdcedb6dac1abf6f1109d9dcec6b7268573fd61d6cec0ac122.tlbId",
+        "logicle..event_id",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1._rids",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1.tlbId",
+        "clust..event_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "f9981392-dccb-46bb-9109-07b339d09308"
+    }
    },
    "parentDataStepId": ""
   },
@@ -1842,9 +2126,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1a8578",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -1968,14 +2252,35 @@
        "kind": "GraphicalFactor",
        "factor": {
         "kind": "Factor",
-        "name": "logicle..event_id",
-        "type": "double"
+        "name": "logicle..channel_name",
+        "type": "string"
        },
        "rectangle": {
         "kind": "Rectangle",
         "extent": {
          "kind": "Point",
+         "x": 210.0,
+         "y": 30.0
+        },
+        "topLeft": {
+         "kind": "Point",
          "x": 0.0,
+         "y": 0.0
+        }
+       }
+      },
+      {
+       "kind": "GraphicalFactor",
+       "factor": {
+        "kind": "Factor",
+        "name": "logicle..channel_description",
+        "type": "string"
+       },
+       "rectangle": {
+        "kind": "Rectangle",
+        "extent": {
+         "kind": "Point",
+         "x": 280.0,
          "y": 30.0
         },
         "topLeft": {
@@ -1987,7 +2292,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 4000
+     "nRows": 47
     },
     "filters": {
      "kind": "Filters",
@@ -2000,8 +2305,8 @@
      "operatorRef": {
       "kind": "OperatorRef",
       "name": "UMAP",
-      "version": "1.2.5",
-      "operatorId": "6",
+      "version": "6465cc9c281de607b3e60cfcdc73442f348764c5",
+      "operatorId": "15",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -2042,7 +2347,7 @@
        {
         "kind": "PropertyValue",
         "name": "seed",
-        "value": "42"
+        "value": "-1"
        }
       ],
       "url": {
@@ -2051,9 +2356,86 @@
       },
       "operatorSpec": {
        "kind": "OperatorSpec",
-       "ontologyUri": "",
-       "ontologyVersion": "",
-       "inputSpecs": [],
+       "ontologyUri": "https://tercen.com/_ontology/tercen",
+       "ontologyVersion": "0.0.1",
+       "inputSpecs": [
+        {
+         "kind": "CrosstabSpec",
+         "metaFactors": [
+          {
+           "kind": "MetaFactor",
+           "name": "Channel",
+           "type": "",
+           "description": "The channel name",
+           "ontologyMapping": "page",
+           "crosstabMapping": "column",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..channel_name",
+             "type": "string"
+            }
+           ]
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "Description",
+           "type": "",
+           "description": "The channel description",
+           "ontologyMapping": "page",
+           "crosstabMapping": "column",
+           "cardinality": "",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..channel_description",
+             "type": "string"
+            }
+           ]
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "event ID",
+           "type": "",
+           "description": "the observations",
+           "ontologyMapping": "sample",
+           "crosstabMapping": "row",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..event_id",
+             "type": "double"
+            }
+           ]
+          }
+         ],
+         "axis": [
+          {
+           "kind": "AxisSpec",
+           "metaFactors": [
+            {
+             "kind": "MetaFactor",
+             "name": "data",
+             "type": "numeric",
+             "description": "the measurements",
+             "ontologyMapping": "y-axis",
+             "crosstabMapping": "y",
+             "cardinality": "1",
+             "factors": [
+              {
+               "kind": "Factor",
+               "name": "logicle.value",
+               "type": "double"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
        "outputSpecs": []
       }
      },
@@ -2090,43 +2472,22 @@
     },
     "rowTable": {
      "kind": "CrosstabTable",
-     "cellSize": 48.0,
+     "cellSize": 250.0,
      "offset": 0,
      "graphicalFactors": [
       {
        "kind": "GraphicalFactor",
        "factor": {
         "kind": "Factor",
-        "name": "logicle..channel_name",
-        "type": "string"
+        "name": "logicle..event_id",
+        "type": "double"
        },
        "rectangle": {
         "kind": "Rectangle",
         "extent": {
          "kind": "Point",
-         "x": 210.0,
+         "x": 170.0,
          "y": 30.0
-        },
-        "topLeft": {
-         "kind": "Point",
-         "x": 0.0,
-         "y": 0.0
-        }
-       }
-      },
-      {
-       "kind": "GraphicalFactor",
-       "factor": {
-        "kind": "Factor",
-        "name": "logicle..channel_description",
-        "type": "string"
-       },
-       "rectangle": {
-        "kind": "Rectangle",
-        "extent": {
-         "kind": "Point",
-         "x": 101.0,
-         "y": 0.0
         },
         "topLeft": {
          "kind": "Point",
@@ -2137,13 +2498,87 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 39
+     "nRows": 4000
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "9d7b6ae0-2adb-4bd3-bfc1-f29429df79b4"
+    "kind": "CompositeRelation",
+    "id": "167b0704-6e9d-479f-ae24-6be855906742",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "logicle..event_id"
+       ],
+       "rColumns": [
+        "logicle..event_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "fc54924b-bae1-45a1-a315-8473d76e17c0",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "194f0637-5707-4ba0-9e9a-0169ac064185",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "ca8fc88f13fcee96c24df208281cd4993dc7c1f4df9a6ba221fbec9b844dfd17",
+         "index": 0
+        }
+       },
+       "inNames": [
+        "umap.umap.1",
+        "umap.umap.2",
+        ".ri",
+        "ca8fc88f13fcee96c24df208281cd4993dc7c1f4df9a6ba221fbec9b844dfd17._rids",
+        "ca8fc88f13fcee96c24df208281cd4993dc7c1f4df9a6ba221fbec9b844dfd17.tlbId",
+        "logicle..event_id",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1._rids",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1.tlbId",
+        "logicle..event_id"
+       ],
+       "outNames": [
+        "umap.umap.1",
+        "umap.umap.2",
+        ".ri",
+        "ca8fc88f13fcee96c24df208281cd4993dc7c1f4df9a6ba221fbec9b844dfd17._rids",
+        "ca8fc88f13fcee96c24df208281cd4993dc7c1f4df9a6ba221fbec9b844dfd17.tlbId",
+        "logicle..event_id",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1._rids",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67-1.tlbId",
+        "umap..event_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "258da382-bbc6-405a-9a5e-3ca9580cb137"
+    }
    },
    "parentDataStepId": ""
   },
@@ -2185,7 +2620,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -2231,9 +2666,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1b80fd",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -2396,7 +2831,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -2659,8 +3094,28 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "26e0b66c-b5ea-48d0-99db-745d88e546c2"
+    "kind": "CompositeRelation",
+    "id": "87e59f2f-6675-44b9-a41f-7738a18f5373",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "a3835a3178870f6ebf07ef88c7ee3fe8acc3c38f0f6368bbc7197f0cc79ddb79",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "f5ab6614-333c-4f56-88bc-434118209d04"
+    }
    },
    "parentDataStepId": ""
   },
@@ -2695,14 +3150,14 @@
     "topLeft": {
      "kind": "Point",
      "x": 210.27738189697266,
-     "y": 521.5
+     "y": 522.5
     }
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1bd73a",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -2933,13 +3388,87 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 9
+     "nRows": 12
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "49cb9c19-1c02-4f5d-a8a0-fa996391619b"
+    "kind": "CompositeRelation",
+    "id": "e9360015-45bb-45cf-9d11-4013b03c1a13",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "clust.cluster_id"
+       ],
+       "rColumns": [
+        "clust.cluster_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "e875b840-15b5-4815-9698-9f5b50a7485d",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "8dd812cf-6d05-498e-bf8a-10ec9ae831fd",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "dc9e9859a69e1e6c0e546af05b08ec6f92c0ae28cbe3749a434231e77a716d9d._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "dc9e9859a69e1e6c0e546af05b08ec6f92c0ae28cbe3749a434231e77a716d9d",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "79d4642077fe056d7a977cef806029627dee8915f5915849fa95616d1e3cbb46",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ri",
+        "centroid.mean_y",
+        "centroid.mean_x",
+        "79d4642077fe056d7a977cef806029627dee8915f5915849fa95616d1e3cbb46._rids",
+        "79d4642077fe056d7a977cef806029627dee8915f5915849fa95616d1e3cbb46.tlbId",
+        "clust.cluster_id",
+        "dc9e9859a69e1e6c0e546af05b08ec6f92c0ae28cbe3749a434231e77a716d9d._rids",
+        "dc9e9859a69e1e6c0e546af05b08ec6f92c0ae28cbe3749a434231e77a716d9d.tlbId",
+        "clust.cluster_id"
+       ],
+       "outNames": [
+        ".ri",
+        "centroid.mean_y",
+        "centroid.mean_x",
+        "79d4642077fe056d7a977cef806029627dee8915f5915849fa95616d1e3cbb46._rids",
+        "79d4642077fe056d7a977cef806029627dee8915f5915849fa95616d1e3cbb46.tlbId",
+        "clust.cluster_id",
+        "dc9e9859a69e1e6c0e546af05b08ec6f92c0ae28cbe3749a434231e77a716d9d._rids",
+        "dc9e9859a69e1e6c0e546af05b08ec6f92c0ae28cbe3749a434231e77a716d9d.tlbId",
+        "centroid..cluster_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "b1628b9c-713b-4b73-8025-b297b94df04c"
+    }
    },
    "parentDataStepId": ""
   },
@@ -2979,9 +3508,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1ccfa7",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "To better characterize the clusters, we can color the UMAP visualisation using the transformed marker expression value and stratify the view per marker.",
@@ -3163,7 +3692,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -3426,13 +3955,33 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 1
+     "nRows": 47
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "3687a3af-3fb6-4412-a985-ee137ee707d1"
+    "kind": "CompositeRelation",
+    "id": "35cccac9-9173-4905-9d30-d07a0a81d754",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "f366204b96b0e4875d91c73fa2b9b7025fbab020f05fcc470f6bbe3e691b5c56",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "ff3fb7de-a23f-46a0-97b9-3dfcc416e4d9"
+    }
    },
    "parentDataStepId": ""
   },
@@ -3467,7 +4016,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -3503,7 +4052,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -3532,7 +4081,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -3541,8 +4090,8 @@
    "version": "",
    "offset": {
     "kind": "Point",
-    "x": -39.0,
-    "y": -114.0
+    "x": 73.0,
+    "y": -62.0
    }
   },
   {
@@ -3583,7 +4132,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -3629,9 +4178,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1d1e3f",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -3774,7 +4323,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 13
+     "nRows": 12
     },
     "filters": {
      "kind": "Filters",
@@ -3788,7 +4337,7 @@
       "kind": "OperatorRef",
       "name": "Marker Enrichment Score",
       "version": "0.1.3",
-      "operatorId": "4",
+      "operatorId": "3",
       "operatorKind": "ROperator",
       "propertyValues": [],
       "url": {
@@ -3883,13 +4432,125 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 40
+     "nRows": 47
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "b0ace8b4-2229-4ea5-8f2f-488568fbb639"
+    "kind": "CompositeRelation",
+    "id": "38b6ea39-bc88-45f7-9034-c564e193ca3b",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "clust.cluster_id",
+        "logicle..channel_name",
+        "logicle..channel_description"
+       ],
+       "rColumns": [
+        "clust.cluster_id",
+        "logicle..channel_name",
+        "logicle..channel_description"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "acb0d93f-f990-4a53-886c-5a8668695471",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "acbc6b9b-ac73-481f-b2e5-eee0310931d2",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "d5de7798ed8724fca11e70ee98b59c52263bd9dfe4a3ba1a5c8f8034d96bd5c3._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "d5de7798ed8724fca11e70ee98b59c52263bd9dfe4a3ba1a5c8f8034d96bd5c3",
+           "index": 0
+          }
+         },
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "58641723749bbd5d1b8187651f6ec1eb067391e632afe091219c74ebf67831bd._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "58641723749bbd5d1b8187651f6ec1eb067391e632afe091219c74ebf67831bd",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "117906a3303aa185835b6e19c1c9838f8fc8ce348fdfdf34456b9b09008fc380",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ri",
+        ".ci",
+        "enrich.score",
+        "enrich.p_value",
+        "enrich.neglog_p_value",
+        "117906a3303aa185835b6e19c1c9838f8fc8ce348fdfdf34456b9b09008fc380._rids",
+        "117906a3303aa185835b6e19c1c9838f8fc8ce348fdfdf34456b9b09008fc380.tlbId",
+        "clust.cluster_id",
+        "d5de7798ed8724fca11e70ee98b59c52263bd9dfe4a3ba1a5c8f8034d96bd5c3._rids",
+        "d5de7798ed8724fca11e70ee98b59c52263bd9dfe4a3ba1a5c8f8034d96bd5c3.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "58641723749bbd5d1b8187651f6ec1eb067391e632afe091219c74ebf67831bd._rids",
+        "58641723749bbd5d1b8187651f6ec1eb067391e632afe091219c74ebf67831bd.tlbId",
+        "clust.cluster_id",
+        "logicle..channel_name",
+        "logicle..channel_description"
+       ],
+       "outNames": [
+        ".ri",
+        ".ci",
+        "enrich.score",
+        "enrich.p_value",
+        "enrich.neglog_p_value",
+        "117906a3303aa185835b6e19c1c9838f8fc8ce348fdfdf34456b9b09008fc380._rids",
+        "117906a3303aa185835b6e19c1c9838f8fc8ce348fdfdf34456b9b09008fc380.tlbId",
+        "clust.cluster_id",
+        "d5de7798ed8724fca11e70ee98b59c52263bd9dfe4a3ba1a5c8f8034d96bd5c3._rids",
+        "d5de7798ed8724fca11e70ee98b59c52263bd9dfe4a3ba1a5c8f8034d96bd5c3.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "58641723749bbd5d1b8187651f6ec1eb067391e632afe091219c74ebf67831bd._rids",
+        "58641723749bbd5d1b8187651f6ec1eb067391e632afe091219c74ebf67831bd.tlbId",
+        "enrich..cluster_id",
+        "enrich..channel_name",
+        "enrich..channel_description"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "5a14208d-729e-4441-b446-f81aaa7f0d76"
+    }
    },
    "parentDataStepId": ""
   },
@@ -3929,9 +4590,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1d6331",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -4092,7 +4753,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 13
+     "nRows": 1
     },
     "filters": {
      "kind": "Filters",
@@ -4106,7 +4767,7 @@
       "kind": "OperatorRef",
       "name": "Heatmap Clustering",
       "version": "1.1.6",
-      "operatorId": "7",
+      "operatorId": "4",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -4206,13 +4867,151 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 40
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "dd30e5f8-ce86-4b8b-994d-7fdd1eed68be"
+    "kind": "CompositeRelation",
+    "id": "9c7525b5-b86d-4128-8bd5-383551a268a2",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "enrich..cluster_id"
+       ],
+       "rColumns": [
+        "enrich..cluster_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "7a879222-8100-4af0-8f58-a001404f88fe",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "b65454cd-b165-4180-badb-bf685c2f3d7f",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "d5bd8ea8849e0c7932770bd85e9b0516bfeca0edd226ce2729b039676bc994ee._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "d5bd8ea8849e0c7932770bd85e9b0516bfeca0edd226ce2729b039676bc994ee",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "5f79660f77979b3606213959ced67d141b0632bd5a37663a796705df13f735c2",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ci",
+        "hc.corder",
+        "5f79660f77979b3606213959ced67d141b0632bd5a37663a796705df13f735c2._rids",
+        "5f79660f77979b3606213959ced67d141b0632bd5a37663a796705df13f735c2.tlbId",
+        "enrich..cluster_id",
+        "d5bd8ea8849e0c7932770bd85e9b0516bfeca0edd226ce2729b039676bc994ee._rids",
+        "d5bd8ea8849e0c7932770bd85e9b0516bfeca0edd226ce2729b039676bc994ee.tlbId",
+        "enrich..cluster_id"
+       ],
+       "outNames": [
+        ".ci",
+        "hc.corder",
+        "5f79660f77979b3606213959ced67d141b0632bd5a37663a796705df13f735c2._rids",
+        "5f79660f77979b3606213959ced67d141b0632bd5a37663a796705df13f735c2.tlbId",
+        "enrich..cluster_id",
+        "d5bd8ea8849e0c7932770bd85e9b0516bfeca0edd226ce2729b039676bc994ee._rids",
+        "d5bd8ea8849e0c7932770bd85e9b0516bfeca0edd226ce2729b039676bc994ee.tlbId",
+        "hc..cluster_id"
+       ]
+      }
+     },
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "enrich..channel_description"
+       ],
+       "rColumns": [
+        "enrich..channel_description"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "60b55b8f-1b71-405a-b185-aa5613bcf18a",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "b254fee9-c7af-44f2-96f4-08fe6e918d4a",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "1cf388c06fd8c2bda2422fc481164b04e146b8abf395c8bd386b61a5db53aeeb._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "1cf388c06fd8c2bda2422fc481164b04e146b8abf395c8bd386b61a5db53aeeb",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "a7bad0afbd9deb782ca4bb9cd7f211f5f78ed45ff6451bd1b92aa86af611a877",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ri",
+        "hc.rorder",
+        "a7bad0afbd9deb782ca4bb9cd7f211f5f78ed45ff6451bd1b92aa86af611a877._rids",
+        "a7bad0afbd9deb782ca4bb9cd7f211f5f78ed45ff6451bd1b92aa86af611a877.tlbId",
+        "enrich..channel_description",
+        "1cf388c06fd8c2bda2422fc481164b04e146b8abf395c8bd386b61a5db53aeeb._rids",
+        "1cf388c06fd8c2bda2422fc481164b04e146b8abf395c8bd386b61a5db53aeeb.tlbId",
+        "enrich..channel_description"
+       ],
+       "outNames": [
+        ".ri",
+        "hc.rorder",
+        "a7bad0afbd9deb782ca4bb9cd7f211f5f78ed45ff6451bd1b92aa86af611a877._rids",
+        "a7bad0afbd9deb782ca4bb9cd7f211f5f78ed45ff6451bd1b92aa86af611a877.tlbId",
+        "enrich..channel_description",
+        "1cf388c06fd8c2bda2422fc481164b04e146b8abf395c8bd386b61a5db53aeeb._rids",
+        "1cf388c06fd8c2bda2422fc481164b04e146b8abf395c8bd386b61a5db53aeeb.tlbId",
+        "hc..channel_description"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "1368fdce-d66a-42bd-880e-8ac2b6da8571"
+    }
    },
    "parentDataStepId": ""
   },
@@ -4254,7 +5053,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -4300,9 +5099,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1dd4bc",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -4509,7 +5308,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -4798,8 +5597,28 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "eced561c-23f8-487c-b76c-f5b84096314e"
+    "kind": "CompositeRelation",
+    "id": "d9b62f93-fa8a-4a27-b0a2-f8e50e38cc97",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "6b59f9a6a92f96f3d213a3264663c96b2f4a551bc943cf597ddaa44ba8643389",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "0095366a-4cd0-454a-8b8c-87b6b3be9687"
+    }
    },
    "parentDataStepId": ""
   },
@@ -4827,7 +5646,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -4836,8 +5655,8 @@
    "version": "",
    "offset": {
     "kind": "Point",
-    "x": 100.0,
-    "y": -125.0
+    "x": 194.0,
+    "y": -65.0
    }
   },
   {
@@ -4878,7 +5697,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -4924,9 +5743,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1ea3ce",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -5083,7 +5902,7 @@
       "kind": "OperatorRef",
       "name": "Count and Proportion",
       "version": "0.1.4",
-      "operatorId": "3",
+      "operatorId": "5",
       "operatorKind": "ROperator",
       "propertyValues": [],
       "url": {
@@ -5183,8 +6002,122 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "94ca7b35-db6f-4949-b937-69655e78d0b1"
+    "kind": "CompositeRelation",
+    "id": "70c10052-4a97-4722-870c-4891222aaa14",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "clust.cluster_id",
+        "annot.Condition",
+        "filename"
+       ],
+       "rColumns": [
+        "clust.cluster_id",
+        "annot.Condition",
+        "filename"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "2287ac3b-49c5-4de4-8ae9-baf90613d801",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "aca675cd-fc1e-44c9-ae90-63a6c94ddc62",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d",
+           "index": 0
+          }
+         },
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ri",
+        ".ci",
+        "prop.n",
+        "prop.prop_per_row",
+        "prop.prop_per_col",
+        "prop.prop_overall",
+        "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce._rids",
+        "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce.tlbId",
+        "clust.cluster_id",
+        "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d._rids",
+        "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d.tlbId",
+        "annot.Condition",
+        "filename",
+        "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d._rids",
+        "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d.tlbId",
+        "clust.cluster_id",
+        "annot.Condition",
+        "filename"
+       ],
+       "outNames": [
+        ".ri",
+        ".ci",
+        "prop.n",
+        "prop.prop_per_row",
+        "prop.prop_per_col",
+        "prop.prop_overall",
+        "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce._rids",
+        "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce.tlbId",
+        "clust.cluster_id",
+        "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d._rids",
+        "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d.tlbId",
+        "annot.Condition",
+        "filename",
+        "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d._rids",
+        "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d.tlbId",
+        "prop..cluster_id",
+        "prop..Condition",
+        "prop..filename"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "14c4affa-0b93-4709-b27b-e72f2c6509e4"
+    }
    },
    "parentDataStepId": ""
   },
@@ -5226,7 +6159,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -5272,9 +6205,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1eebea",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -5447,7 +6380,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -5705,13 +6638,33 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 14
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "d3884ef0-9b02-4e2c-b105-b0a1d39e89fd"
+    "kind": "CompositeRelation",
+    "id": "3be19fb7-3800-4326-b159-30570ec23eeb",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "59d3cf3a6d6e27301c68374417e9b9d5fd5c42a5f89eb9179789ee92de0baabd",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "21e90f15-49aa-4b88-bbef-7919e8c2a517"
+    }
    },
    "parentDataStepId": ""
   },
@@ -5746,7 +6699,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -5782,7 +6735,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -5818,7 +6771,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -5859,9 +6812,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc05e6da",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Import FCS data to the Tercen format. A summary of the data can be found in the table below.",
@@ -6032,7 +6985,7 @@
       "kind": "OperatorRef",
       "name": "FCS",
       "version": "2.4.0",
-      "operatorId": "20",
+      "operatorId": "6",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -6106,8 +7059,98 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "8b33be78-4de1-4b6e-ab0f-34c33d854d55"
+    "kind": "CompositeRelation",
+    "id": "a44aceab-7043-4f40-a50c-5392f9bbceb3",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "CompositeRelation",
+       "id": "e441b693-91cc-4d0d-b80a-78b029b47a98",
+       "joinOperators": [
+        {
+         "kind": "JoinOperator",
+         "joinType": "",
+         "leftPair": {
+          "kind": "ColumnPair",
+          "lColumns": [
+           "event_id"
+          ],
+          "rColumns": [
+           "event_id"
+          ]
+         },
+         "rightRelation": {
+          "kind": "SimpleRelation",
+          "id": "f9c06976750b11aabf52a5174c3141ad60184e242fb44b39f034d63315c60f4d",
+          "index": 0
+         }
+        },
+        {
+         "kind": "JoinOperator",
+         "joinType": "",
+         "leftPair": {
+          "kind": "ColumnPair",
+          "lColumns": [
+           "channel_id"
+          ],
+          "rColumns": [
+           "channel_id"
+          ]
+         },
+         "rightRelation": {
+          "kind": "SimpleRelation",
+          "id": "9c070af359ba3efc87d2b040dd497cbefa61a0a3e09290971949f7f4723bd488",
+          "index": 0
+         }
+        }
+       ],
+       "mainRelation": {
+        "kind": "SimpleRelation",
+        "id": "45f684510c6bf6568cfbf3b87a4d3cbdc1a60a85c512de9cd5b28ee6cb46245d",
+        "index": 0
+       }
+      }
+     },
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "1b6b3007fc3f9b615d616a344958beebcb0a0b5342ccc63426045ce004356d7e",
+       "index": 0
+      }
+     },
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "dbb43aaf2666d0ae123626c436d6f9c459fdf798573b4fd80319917684f09b31",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "871f450f-259f-4f12-b97b-d311fb2e4516"
+    }
    },
    "parentDataStepId": ""
   },
@@ -6147,9 +7190,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc16c6f7",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Selected channels (see filters) have been transformed using the logicle operator. Parameters of the transformation have been automatically estimated,",
@@ -6317,7 +7360,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -6580,13 +7623,33 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 39
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "3e050c2e-44c4-44f7-87b5-aebd79a1abad"
+    "kind": "CompositeRelation",
+    "id": "affba208-9bf4-4c16-8ddb-1c2b6f7ff7dd",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "dc56bc093136687e466ecd7893bde717eeed4c3250e3a29b51bd66cd08730367",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "b5abdd6d-9f3c-45ee-97a8-ce4d0c70a5a7"
+    }
    },
    "parentDataStepId": ""
   },
@@ -6626,9 +7689,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc148409",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -6752,14 +7815,35 @@
        "kind": "GraphicalFactor",
        "factor": {
         "kind": "Factor",
-        "name": "logicle..event_id",
-        "type": "double"
+        "name": "logicle..channel_name",
+        "type": "string"
        },
        "rectangle": {
         "kind": "Rectangle",
         "extent": {
          "kind": "Point",
+         "x": 210.0,
+         "y": 30.0
+        },
+        "topLeft": {
+         "kind": "Point",
          "x": 0.0,
+         "y": 0.0
+        }
+       }
+      },
+      {
+       "kind": "GraphicalFactor",
+       "factor": {
+        "kind": "Factor",
+        "name": "logicle..channel_description",
+        "type": "string"
+       },
+       "rectangle": {
+        "kind": "Rectangle",
+        "extent": {
+         "kind": "Point",
+         "x": 280.0,
          "y": 30.0
         },
         "topLeft": {
@@ -6771,7 +7855,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 4000
+     "nRows": 47
     },
     "filters": {
      "kind": "Filters",
@@ -6784,8 +7868,8 @@
      "operatorRef": {
       "kind": "OperatorRef",
       "name": "Scale (Z-Score)",
-      "version": "0.12.2",
-      "operatorId": "9",
+      "version": "dfede5a4a195ccc3382cfe6125861d6234130cbc",
+      "operatorId": "14",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -6805,9 +7889,86 @@
       },
       "operatorSpec": {
        "kind": "OperatorSpec",
-       "ontologyUri": "",
-       "ontologyVersion": "",
-       "inputSpecs": [],
+       "ontologyUri": "https://tercen.com/_ontology/tercen",
+       "ontologyVersion": "0.0.1",
+       "inputSpecs": [
+        {
+         "kind": "CrosstabSpec",
+         "metaFactors": [
+          {
+           "kind": "MetaFactor",
+           "name": "Channel",
+           "type": "",
+           "description": "The channel name",
+           "ontologyMapping": "page",
+           "crosstabMapping": "column",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..channel_name",
+             "type": "string"
+            }
+           ]
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "Description",
+           "type": "",
+           "description": "The channel description",
+           "ontologyMapping": "page",
+           "crosstabMapping": "column",
+           "cardinality": "",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..channel_description",
+             "type": "string"
+            }
+           ]
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "event ID",
+           "type": "",
+           "description": "the observations",
+           "ontologyMapping": "sample",
+           "crosstabMapping": "row",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "logicle..event_id",
+             "type": "double"
+            }
+           ]
+          }
+         ],
+         "axis": [
+          {
+           "kind": "AxisSpec",
+           "metaFactors": [
+            {
+             "kind": "MetaFactor",
+             "name": "data",
+             "type": "numeric",
+             "description": "the measurements",
+             "ontologyMapping": "y-axis",
+             "crosstabMapping": "y",
+             "cardinality": "1",
+             "factors": [
+              {
+               "kind": "Factor",
+               "name": "logicle.value",
+               "type": "double"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
        "outputSpecs": []
       }
      },
@@ -6844,43 +8005,22 @@
     },
     "rowTable": {
      "kind": "CrosstabTable",
-     "cellSize": 128.0,
+     "cellSize": 250.0,
      "offset": 0,
      "graphicalFactors": [
       {
        "kind": "GraphicalFactor",
        "factor": {
         "kind": "Factor",
-        "name": "logicle..channel_description",
-        "type": "string"
+        "name": "logicle..event_id",
+        "type": "double"
        },
        "rectangle": {
         "kind": "Rectangle",
         "extent": {
          "kind": "Point",
-         "x": 280.0,
+         "x": 170.0,
          "y": 30.0
-        },
-        "topLeft": {
-         "kind": "Point",
-         "x": 0.0,
-         "y": 0.0
-        }
-       }
-      },
-      {
-       "kind": "GraphicalFactor",
-       "factor": {
-        "kind": "Factor",
-        "name": "logicle..channel_name",
-        "type": "string"
-       },
-       "rectangle": {
-        "kind": "Rectangle",
-        "extent": {
-         "kind": "Point",
-         "x": 80.0,
-         "y": 0.0
         },
         "topLeft": {
          "kind": "Point",
@@ -6891,13 +8031,121 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 39
+     "nRows": 4000
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "045bc712-aad7-4dc3-bc17-4dce0cc26cf5"
+    "kind": "CompositeRelation",
+    "id": "2b19329e-3e36-49a8-9c1d-1775ff8d7e36",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "logicle..event_id"
+       ],
+       "rColumns": [
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "logicle..event_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "706f725e-2936-4250-baf0-ac161514acc0",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "04b68144-7636-4685-bcb2-7823afac1633",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "8d1077402eb9623afbbe40b26a3eb1d8482b2f53dc7e302341b79da9d79870cd._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "8d1077402eb9623afbbe40b26a3eb1d8482b2f53dc7e302341b79da9d79870cd",
+           "index": 0
+          }
+         },
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "79076acfc3ddae4ddd519f44dbf61a5f27d1aed762d1f292a4112e21e833c91d",
+         "index": 0
+        }
+       },
+       "inNames": [
+        "z.scaled_value",
+        ".ci",
+        ".ri",
+        "79076acfc3ddae4ddd519f44dbf61a5f27d1aed762d1f292a4112e21e833c91d._rids",
+        "79076acfc3ddae4ddd519f44dbf61a5f27d1aed762d1f292a4112e21e833c91d.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "8d1077402eb9623afbbe40b26a3eb1d8482b2f53dc7e302341b79da9d79870cd._rids",
+        "8d1077402eb9623afbbe40b26a3eb1d8482b2f53dc7e302341b79da9d79870cd.tlbId",
+        "logicle..event_id",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67._rids",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "logicle..event_id"
+       ],
+       "outNames": [
+        "z.scaled_value",
+        ".ci",
+        ".ri",
+        "79076acfc3ddae4ddd519f44dbf61a5f27d1aed762d1f292a4112e21e833c91d._rids",
+        "79076acfc3ddae4ddd519f44dbf61a5f27d1aed762d1f292a4112e21e833c91d.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "8d1077402eb9623afbbe40b26a3eb1d8482b2f53dc7e302341b79da9d79870cd._rids",
+        "8d1077402eb9623afbbe40b26a3eb1d8482b2f53dc7e302341b79da9d79870cd.tlbId",
+        "logicle..event_id",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67._rids",
+        "62af44637ddae6918abf45b26e3508b090c65ad307b442cc6c366106b479ba67.tlbId",
+        "z..channel_name",
+        "z..channel_description",
+        "z..event_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "6d971e30-f2ee-4189-9cee-adfa118e2f15"
+    }
    },
    "parentDataStepId": ""
   },
@@ -6937,9 +8185,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc17288a",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -7107,7 +8355,7 @@
       "kind": "OperatorRef",
       "name": "Histogram",
       "version": "0.2.0",
-      "operatorId": "13",
+      "operatorId": "0",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -7197,8 +8445,86 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "dc816b8b-1831-4e68-9e99-57aab37038b7"
+    "kind": "CompositeRelation",
+    "id": "920285c3-cb07-406b-bcf9-4642672ab884",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "z..channel_description"
+       ],
+       "rColumns": [
+        "z..channel_description"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "5cf88305-7fdc-49d6-b330-028ead85cf35",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "13f58d94-f11e-45b4-b7f9-91a8b3442f56",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "95ae2e0af94176108378efa2497f09f063d13412da1956fed2ae8986af34be32._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "95ae2e0af94176108378efa2497f09f063d13412da1956fed2ae8986af34be32",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "33569281f37cb64c1f883d756cc77e6cd9264f0237b022c42723086bac023cde",
+         "index": 0
+        }
+       },
+       "inNames": [
+        "hist0.counts",
+        "hist0.density",
+        "hist0.mids",
+        "hist0.bins",
+        ".ri",
+        "33569281f37cb64c1f883d756cc77e6cd9264f0237b022c42723086bac023cde._rids",
+        "33569281f37cb64c1f883d756cc77e6cd9264f0237b022c42723086bac023cde.tlbId",
+        "z..channel_description",
+        "95ae2e0af94176108378efa2497f09f063d13412da1956fed2ae8986af34be32._rids",
+        "95ae2e0af94176108378efa2497f09f063d13412da1956fed2ae8986af34be32.tlbId",
+        "z..channel_description"
+       ],
+       "outNames": [
+        "hist0.counts",
+        "hist0.density",
+        "hist0.mids",
+        "hist0.bins",
+        ".ri",
+        "33569281f37cb64c1f883d756cc77e6cd9264f0237b022c42723086bac023cde._rids",
+        "33569281f37cb64c1f883d756cc77e6cd9264f0237b022c42723086bac023cde.tlbId",
+        "z..channel_description",
+        "95ae2e0af94176108378efa2497f09f063d13412da1956fed2ae8986af34be32._rids",
+        "95ae2e0af94176108378efa2497f09f063d13412da1956fed2ae8986af34be32.tlbId",
+        "hist0..channel_description"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "65b08ae9-3f27-4ad4-bce4-6b1bcb183a6c"
+    }
    },
    "parentDataStepId": ""
   },
@@ -7238,9 +8564,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc177566",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Logicle values have then been z-scaled.",
@@ -7408,7 +8734,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -7676,8 +9002,28 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "471efe5b-098a-4264-b865-0eea4f8a425d"
+    "kind": "CompositeRelation",
+    "id": "14b6e57f-35f4-472c-8ca5-532745ff4885",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "b7a214998e22246b03c0289fb0e5a00d23422b212f81652b11354b7577352ddc",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "759c4d66-e41d-4c50-9ef9-e42e53590220"
+    }
    },
    "parentDataStepId": ""
   },
@@ -7712,7 +9058,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -7753,9 +9099,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1c2462",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Transformed data (logicle) went through a clustering step with PhenoGraph and a dimension reduction step using UMAP. This view shows the UMAP embedding, colored by PhenoGraph's clusters and stratified using the sample name.",
@@ -8027,7 +9373,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -8290,13 +9636,33 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 4
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "e4bfb77c-169e-4e1f-be59-8fd6a65f4176"
+    "kind": "CompositeRelation",
+    "id": "b98d4980-5e3d-45a1-a59c-db661fc05671",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "9f3e45598a4fa9050cd645deaea7b0a73b110089e3daf8d3c41caa24694ded86",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "250e6eed-feae-4236-938a-dfbe785568e0"
+    }
    },
    "parentDataStepId": ""
   },
@@ -8331,7 +9697,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -8372,9 +9738,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1e24e6",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -8534,7 +9900,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 32
+     "nRows": 1
     },
     "filters": {
      "kind": "Filters",
@@ -8569,7 +9935,7 @@
       "kind": "OperatorRef",
       "name": "Add Table to Report",
       "version": "0.1.1",
-      "operatorId": "14",
+      "operatorId": "7",
       "operatorKind": "DockerOperator",
       "propertyValues": [
        {
@@ -8654,13 +10020,33 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 14
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "0ff58415-b681-44f5-b51d-c14fcf6528fd"
+    "kind": "CompositeRelation",
+    "id": "45935fc5-cfa1-4790-82d7-4ceaed305dff",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "6fc961da4bf5dcaf6049a29cdeb0f9fe33584f3e2fd3707739b64794436fb8b3",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "af255bcb-6a3b-4a14-9dc2-5eb8481f254a"
+    }
    },
    "parentDataStepId": ""
   },
@@ -8695,16 +10081,30 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Select a data set.",
    "model": {
     "kind": "TableStepModel",
     "relation": {
-     "kind": "UnionRelation",
-     "id": "9f819355-a93c-47a3-8541-e2581824934d",
-     "relations": []
+     "kind": "RenameRelation",
+     "id": "rename_ab5a30e104d6d9bc395076fdbc00d3b1",
+     "relation": {
+      "kind": "SimpleRelation",
+      "id": "6f7ccffd77e2b966d986b5afe9d23542a6baed390bebae1d3c175dde4c0a67cd",
+      "index": 0
+     },
+     "inNames": [
+      "filename",
+      "Condition",
+      "6f7ccffd77e2b966d986b5afe9d23542a6baed390bebae1d3c175dde4c0a67cd._rids"
+     ],
+     "outNames": [
+      "filename",
+      "Condition",
+      "rowId"
+     ]
     },
     "filterSelector": ""
    }
@@ -8745,9 +10145,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1f3c6b",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -8900,7 +10300,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 2
+     "nRows": 1
     },
     "filters": {
      "kind": "Filters",
@@ -8914,7 +10314,7 @@
       "kind": "OperatorRef",
       "name": "Median and MAD",
       "version": "0.0.3",
-      "operatorId": "15",
+      "operatorId": "8",
       "operatorKind": "ROperator",
       "propertyValues": [],
       "url": {
@@ -8988,13 +10388,117 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 15
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "100d8547-d4fa-49c4-bf3e-6fd7052f985b"
+    "kind": "CompositeRelation",
+    "id": "aa06aa66-eb00-4bbc-8b76-3a61a9873d62",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "prop..Condition",
+        "prop..cluster_id"
+       ],
+       "rColumns": [
+        "prop..Condition",
+        "prop..cluster_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "61ce4643-b8e0-4bf2-989d-89139d9cf9a0",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "b09cd603-123b-4da0-8451-bb0c18079d12",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "df302c35aa646728a046a80fc5db31e361000f6f25083c255ee1c8fa35b876f5._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "df302c35aa646728a046a80fc5db31e361000f6f25083c255ee1c8fa35b876f5",
+           "index": 0
+          }
+         },
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "9d6f56847cc510ab743cf310f177debc0d5d1755f86ce5d238fa85a1370e0b2c._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "9d6f56847cc510ab743cf310f177debc0d5d1755f86ce5d238fa85a1370e0b2c",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "322dfc69376a06188c3d5396f52b3c26fca1c37563fcfb5bd601ec355ae04706",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ci",
+        ".ri",
+        "plt_prop0.median",
+        "plt_prop0.mad",
+        "322dfc69376a06188c3d5396f52b3c26fca1c37563fcfb5bd601ec355ae04706._rids",
+        "322dfc69376a06188c3d5396f52b3c26fca1c37563fcfb5bd601ec355ae04706.tlbId",
+        "prop..Condition",
+        "df302c35aa646728a046a80fc5db31e361000f6f25083c255ee1c8fa35b876f5._rids",
+        "df302c35aa646728a046a80fc5db31e361000f6f25083c255ee1c8fa35b876f5.tlbId",
+        "prop..cluster_id",
+        "9d6f56847cc510ab743cf310f177debc0d5d1755f86ce5d238fa85a1370e0b2c._rids",
+        "9d6f56847cc510ab743cf310f177debc0d5d1755f86ce5d238fa85a1370e0b2c.tlbId",
+        "prop..Condition",
+        "prop..cluster_id"
+       ],
+       "outNames": [
+        ".ci",
+        ".ri",
+        "plt_prop0.median",
+        "plt_prop0.mad",
+        "322dfc69376a06188c3d5396f52b3c26fca1c37563fcfb5bd601ec355ae04706._rids",
+        "322dfc69376a06188c3d5396f52b3c26fca1c37563fcfb5bd601ec355ae04706.tlbId",
+        "prop..Condition",
+        "df302c35aa646728a046a80fc5db31e361000f6f25083c255ee1c8fa35b876f5._rids",
+        "df302c35aa646728a046a80fc5db31e361000f6f25083c255ee1c8fa35b876f5.tlbId",
+        "prop..cluster_id",
+        "9d6f56847cc510ab743cf310f177debc0d5d1755f86ce5d238fa85a1370e0b2c._rids",
+        "9d6f56847cc510ab743cf310f177debc0d5d1755f86ce5d238fa85a1370e0b2c.tlbId",
+        "plt_prop0..Condition",
+        "plt_prop0..cluster_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "b0c4469c-d1f5-43f5-922c-7ec947fdbb24"
+    }
    },
    "parentDataStepId": ""
   },
@@ -9034,9 +10538,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1fa8e7",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Median and MAD of cluster proportions across conditions.",
@@ -9215,7 +10719,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -9473,13 +10977,33 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 14
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "4703ddc8-5486-4706-bed1-051d8efeb930"
+    "kind": "CompositeRelation",
+    "id": "2438c902-1e4a-4f8b-9641-8a748405526d",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "2527f71b240a74d8a38577869be763ce9ec6602ad22b7c882abf399c81489630",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "c162fdf1-f3ba-4dce-87b5-8969337b014c"
+    }
    },
    "parentDataStepId": ""
   },
@@ -9514,7 +11038,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Used to define view in a sub workflow."
@@ -9555,9 +11079,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc201baa",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -9717,7 +11241,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 2
+     "nRows": 1
     },
     "filters": {
      "kind": "Filters",
@@ -9731,7 +11255,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -9994,8 +11518,28 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "f05a0344-1e49-4012-aeec-dc5ba1cf6c2f"
+    "kind": "CompositeRelation",
+    "id": "0fc94a53-3866-439a-9a3a-ed3adca0e401",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "ba2f97534a82ddcf6ba73423e5c416297b48f31befaff2e6ed9e6ee55dcdb731",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "e7bd2cd1-676b-4583-8d39-5783861ece83"
+    }
    },
    "parentDataStepId": ""
   },
@@ -10030,7 +11574,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -10071,9 +11615,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc066c9a",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "A table to check channel names and descriptions.",
@@ -10230,7 +11774,7 @@
       "kind": "OperatorRef",
       "name": "Add Table to Report",
       "version": "0.1.1",
-      "operatorId": "12",
+      "operatorId": "7",
       "operatorKind": "DockerOperator",
       "propertyValues": [
        {
@@ -10310,8 +11854,28 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "02217d4a-2974-434a-9564-c1c950dbcfd6"
+    "kind": "CompositeRelation",
+    "id": "63ac9f3e-b4c0-4c20-85fa-f93e44e4b8cf",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "2e33fab7dab0abc2489bca8d50b490805c04430eb8b9f8d0b17756f188530821",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "ae426913-a102-49f4-9778-be2e728ec2f5"
+    }
    },
    "parentDataStepId": ""
   },
@@ -10351,9 +11915,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc0672b3",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -10502,7 +12066,7 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 4000
+     "nRows": 1
     },
     "filters": {
      "kind": "Filters",
@@ -10516,7 +12080,7 @@
       "kind": "OperatorRef",
       "name": "Downsample",
       "version": "3.0.0",
-      "operatorId": "8",
+      "operatorId": "9",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -10570,13 +12134,87 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 47
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "e4fe4791-9e8f-40cc-9589-e50e9a03befd"
+    "kind": "CompositeRelation",
+    "id": "38640a48-8e61-46df-92db-b40221f0d525",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "event_id"
+       ],
+       "rColumns": [
+        "event_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "d40c60c0-afd6-431e-8fe3-ab3759c25fc8",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "094c4642-39b4-4621-b673-a3ad4ca9b728",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ci",
+        "downsample.random_sequence",
+        "downsample.random_percentage",
+        "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a._rids",
+        "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a.tlbId",
+        "event_id",
+        "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae._rids",
+        "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae.tlbId",
+        "event_id"
+       ],
+       "outNames": [
+        ".ci",
+        "downsample.random_sequence",
+        "downsample.random_percentage",
+        "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a._rids",
+        "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a.tlbId",
+        "event_id",
+        "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae._rids",
+        "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae.tlbId",
+        "downsample..event_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "c2107466-e35a-413b-8135-091a39d77b60"
+    }
    },
    "parentDataStepId": ""
   },
@@ -10616,9 +12254,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc17cd80",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -10968,7 +12606,7 @@
       "kind": "OperatorRef",
       "name": "Count",
       "version": "1.0.2",
-      "operatorId": "1",
+      "operatorId": "10",
       "operatorKind": "ROperator",
       "propertyValues": [],
       "url": {
@@ -11068,8 +12706,116 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "0781d542-3293-4cba-9794-8b6c9d68e20e"
+    "kind": "CompositeRelation",
+    "id": "6f997178-c291-4361-be38-4b4d8cd3e481",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "filename",
+        "logicle..channel_name",
+        "logicle..channel_description"
+       ],
+       "rColumns": [
+        "filename",
+        "logicle..channel_name",
+        "logicle..channel_description"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "07d8b2df-2480-474a-8142-6e954ee03fb2",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "a75d4c6b-7e48-4f8d-bbff-262d6e65a6a7",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25",
+           "index": 0
+          }
+         },
+         {
+          "kind": "JoinOperator",
+          "joinType": "",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7",
+           "index": 0
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71",
+         "index": 0
+        }
+       },
+       "inNames": [
+        ".ci",
+        ".ri",
+        "ct_evt.count",
+        "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71._rids",
+        "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71.tlbId",
+        "filename",
+        "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25._rids",
+        "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7._rids",
+        "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7.tlbId",
+        "filename",
+        "logicle..channel_name",
+        "logicle..channel_description"
+       ],
+       "outNames": [
+        ".ci",
+        ".ri",
+        "ct_evt.count",
+        "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71._rids",
+        "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71.tlbId",
+        "filename",
+        "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25._rids",
+        "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7._rids",
+        "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7.tlbId",
+        "ct_evt..filename",
+        "ct_evt..channel_name",
+        "ct_evt..channel_description"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "42f823b1-b4b6-47c7-b7e7-b01f0e7a5098"
+    }
    },
    "parentDataStepId": ""
   },
@@ -11109,9 +12855,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1803d0",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Number of events per file and channel after channel selection and downsampling.",
@@ -11461,7 +13207,7 @@
       "kind": "OperatorRef",
       "name": "Add Table to Report",
       "version": "0.1.1",
-      "operatorId": "12",
+      "operatorId": "7",
       "operatorKind": "DockerOperator",
       "propertyValues": [
        {
@@ -11567,8 +13313,28 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "bef26de9-780b-42a9-8177-488232f4ba68"
+    "kind": "CompositeRelation",
+    "id": "4c2a9d8b-8dfa-40a8-a89d-5ec097924725",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "b9aec37e05128af1e0cace0b996027c133c3c0b98c0203ebee26f7fb152402de",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "4515da9d-ed3f-4179-9eac-b2956afe4ba6"
+    }
    },
    "parentDataStepId": ""
   },
@@ -11603,7 +13369,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -11639,7 +13405,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -11675,7 +13441,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -11711,7 +13477,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -11754,7 +13520,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Sample annotation",
@@ -11808,7 +13574,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Join two data sets.",
@@ -11831,7 +13597,23 @@
     "rightPrefix": "annot",
     "joinType": ""
    },
-   "rightAttributes": []
+   "rightAttributes": [
+    {
+     "kind": "Attribute",
+     "name": "filename",
+     "type": "string"
+    },
+    {
+     "kind": "Attribute",
+     "name": "Condition",
+     "type": "string"
+    },
+    {
+     "kind": "Attribute",
+     "name": "rowId",
+     "type": "int32"
+    }
+   ]
   },
   {
    "kind": "GroupStep",
@@ -11908,7 +13690,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -11954,9 +13736,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1c6dcb",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "Transformed data (logicle) went through a clustering step with PhenoGraph and a dimension reduction step using UMAP. This view shows the UMAP embedding, colored by PhenoGraph's clusters and stratified using the grouping factor.",
@@ -12228,7 +14010,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -12491,13 +14273,33 @@
       }
      ],
      "rectangleSelections": [],
-     "nRows": 2
+     "nRows": 1
     },
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "2f9a8bdb-57ce-41cf-ba4b-80c090396a76"
+    "kind": "CompositeRelation",
+    "id": "c7156040-077b-4bcb-bac8-17d0d4ec7682",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "ece6638d5450b1e5127a1619a0b2e505d958e470b370de3d89984d73bffe6413",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "2d09e466-ff53-4a09-889d-b2ba4dd5fa94"
+    }
    },
    "parentDataStepId": ""
   },
@@ -12532,7 +14334,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -12573,9 +14375,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc1e6f23",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "The enrichment score can be used to check cluster expression profiles.",
@@ -12742,7 +14544,7 @@
       "kind": "OperatorRef",
       "name": "Plot",
       "version": "0.3.8",
-      "operatorId": "21",
+      "operatorId": "1",
       "operatorKind": "ROperator",
       "propertyValues": [
        {
@@ -13010,8 +14812,28 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "01e5e9ad-2814-4fd1-9daa-e6ff13b6dc26"
+    "kind": "CompositeRelation",
+    "id": "104c1e07-e3da-40a5-9e4c-b16113d709d2",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "c07e470b808866e21f8401e235bec2f50f29a1179042901e7c154a3178fe6fbe",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "49ebb394-84bd-4204-9905-6ef7ba08ad0a"
+    }
    },
    "parentDataStepId": ""
   },
@@ -13046,7 +14868,7 @@
     "kind": "StepState",
     "taskId": "",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": ""
@@ -13087,9 +14909,9 @@
    },
    "state": {
     "kind": "StepState",
-    "taskId": "",
+    "taskId": "ab5a30e104d6d9bc395076fdbc208446",
     "taskState": {
-     "kind": "InitState"
+     "kind": "DoneState"
     }
    },
    "description": "",
@@ -13246,7 +15068,7 @@
       "kind": "OperatorRef",
       "name": "Export Report",
       "version": "0.2.4",
-      "operatorId": "10",
+      "operatorId": "11",
       "operatorKind": "DockerOperator",
       "propertyValues": [
        {
@@ -13362,8 +15184,28 @@
     "taskId": ""
    },
    "computedRelation": {
-    "kind": "Relation",
-    "id": "eb14ae95-7479-44c1-b5cf-4277bf778cf7"
+    "kind": "CompositeRelation",
+    "id": "892c0c8d-8330-4513-83d0-9548af87da72",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [],
+       "rColumns": []
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "8571877d1e56c1a775f511e69c3e47afb2baee3048d3f3978b7bea1e59dee9db",
+       "index": 0
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "Relation",
+     "id": "797d0c29-2f80-4314-b919-d3a4140b7233"
+    }
    },
    "parentDataStepId": ""
   },
@@ -13562,7 +15404,7 @@
       "kind": "OperatorRef",
       "name": "Export Report",
       "version": "0.2.4",
-      "operatorId": "10",
+      "operatorId": "11",
       "operatorKind": "DockerOperator",
       "propertyValues": [
        {
@@ -13658,7 +15500,7 @@
    },
    "computedRelation": {
     "kind": "Relation",
-    "id": "257fa232-fdf8-4e2b-844a-3ed368eec373"
+    "id": "c0db80bc-bdfa-4bb7-9986-2dcfb5623a89"
    },
    "parentDataStepId": ""
   },
@@ -13879,7 +15721,7 @@
       "kind": "OperatorRef",
       "name": "Export FCS",
       "version": "0.2.0",
-      "operatorId": "11",
+      "operatorId": "12",
       "operatorKind": "ROperator",
       "propertyValues": [],
       "url": {
@@ -13959,15 +15801,15 @@
    },
    "computedRelation": {
     "kind": "Relation",
-    "id": "c897b3ea-15c5-49ff-b229-577e1ba10209"
+    "id": "778c70be-e13d-4d98-825e-b8e8ca2fd489"
    },
    "parentDataStepId": ""
   }
  ],
  "offset": {
   "kind": "Point",
-  "x": 127.0,
-  "y": -132.0
+  "x": 429.0,
+  "y": -80.0
  },
  "scale": 1.0
 }

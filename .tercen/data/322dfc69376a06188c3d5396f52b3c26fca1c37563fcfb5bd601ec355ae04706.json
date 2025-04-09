@@ -1,0 +1,322 @@
+{
+ "kind": "ComputedTableSchema",
+ "id": "322dfc69376a06188c3d5396f52b3c26fca1c37563fcfb5bd601ec355ae04706",
+ "isDeleted": false,
+ "rev": "",
+ "description": "",
+ "name": "33defdd0-1559-11f0-a82f-efc5f9012c91",
+ "acl": {
+  "kind": "Acl",
+  "owner": "",
+  "aces": []
+ },
+ "createdDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "lastModifiedDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "urls": [],
+ "tags": [],
+ "meta": [
+  {
+   "kind": "Pair",
+   "key": "SHA256",
+   "value": "322dfc69376a06188c3d5396f52b3c26fca1c37563fcfb5bd601ec355ae04706"
+  }
+ ],
+ "url": {
+  "kind": "Url",
+  "uri": ""
+ },
+ "version": "",
+ "isPublic": false,
+ "projectId": "",
+ "folderId": "",
+ "nRows": 24,
+ "columns": [
+  {
+   "kind": "ColumnSchema",
+   "id": "a9131639-a492-4402-8240-2ddaaf191dda",
+   "name": ".ci",
+   "type": "int32",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "69b32d6b-0225-4268-bec4-d4a6c8faf5f2",
+   "name": ".ri",
+   "type": "int32",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "9db932c7-43f5-4832-88aa-fe45c9c0a4b0",
+   "name": "plt_prop0.median",
+   "type": "double",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "c561a253-2c6a-48b1-9b7a-645b85d81a10",
+   "name": "plt_prop0.mad",
+   "type": "double",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  }
+ ],
+ "dataDirectory": "data/32/2d/322dfc69376a06188c3d5396f52b3c26fca1c37563fcfb5bd601ec355ae04706",
+ "relation": {
+  "kind": "Relation",
+  "id": "44eea16d-adfb-4801-905a-ba294a3b959c"
+ },
+ "size": 848,
+ "query": {
+  "kind": "CubeQuery",
+  "relation": {
+   "kind": "RenameRelation",
+   "id": "2dc40dc0-9245-4232-a22b-60bc658e60a9",
+   "relation": {
+    "kind": "CompositeRelation",
+    "id": "529825fc-3d2b-46bd-ae29-d278577bcb5f",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "leftOuter",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        ".ri"
+       ],
+       "rColumns": [
+        "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d._rids"
+       ]
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d",
+       "index": 2
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "CompositeRelation",
+     "id": "bc1b82e8-4e9b-4713-8193-8008e6676d7b",
+     "joinOperators": [
+      {
+       "kind": "JoinOperator",
+       "joinType": "leftOuter",
+       "leftPair": {
+        "kind": "ColumnPair",
+        "lColumns": [
+         ".ci"
+        ],
+        "rColumns": [
+         "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d._rids"
+        ]
+       },
+       "rightRelation": {
+        "kind": "SimpleRelation",
+        "id": "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d",
+        "index": 1
+       }
+      }
+     ],
+     "mainRelation": {
+      "kind": "SimpleRelation",
+      "id": "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce",
+      "index": 0
+     }
+    }
+   },
+   "inNames": [
+    ".ri",
+    ".ci",
+    "prop.n",
+    "prop.prop_per_row",
+    "prop.prop_per_col",
+    "prop.prop_overall",
+    "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce._rids",
+    "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce.tlbId",
+    "clust.cluster_id",
+    "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d._rids",
+    "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d.tlbId",
+    "annot.Condition",
+    "filename",
+    "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d._rids",
+    "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d.tlbId",
+    "clust.cluster_id",
+    "annot.Condition",
+    "filename"
+   ],
+   "outNames": [
+    ".ri",
+    ".ci",
+    "prop.n",
+    "prop.prop_per_row",
+    "prop.prop_per_col",
+    "prop.prop_overall",
+    "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce._rids",
+    "0ebbce7420494212170e6728eddd0d01c486e905e1ca2079bccd2661363f72ce.tlbId",
+    "clust.cluster_id",
+    "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d._rids",
+    "3124f89f69acf77d7c4de08ba456f8e5cf9e2bea8a0aa051f4e6f3b829c2e47d.tlbId",
+    "annot.Condition",
+    "filename",
+    "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d._rids",
+    "7ea221e6c2cd7e83ed541855caa9fa849d51dae46699eeb45a0a6e67bf0e5f2d.tlbId",
+    "prop..cluster_id",
+    "prop..Condition",
+    "prop..filename"
+   ]
+  },
+  "colColumns": [
+   {
+    "kind": "Factor",
+    "name": "prop..Condition",
+    "type": "string"
+   }
+  ],
+  "rowColumns": [
+   {
+    "kind": "Factor",
+    "name": "prop..cluster_id",
+    "type": "string"
+   }
+  ],
+  "axisQueries": [
+   {
+    "kind": "CubeAxisQuery",
+    "pointSize": 4,
+    "chartType": "bar",
+    "yAxis": {
+     "kind": "Factor",
+     "name": "prop.prop_per_row",
+     "type": "double"
+    },
+    "yAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": [
+      {
+       "kind": "Pair",
+       "key": "axisType",
+       "value": "row"
+      },
+      {
+       "kind": "Pair",
+       "key": "includeZero",
+       "value": "true"
+      }
+     ]
+    },
+    "xAxis": {
+     "kind": "Factor",
+     "name": "",
+     "type": "string"
+    },
+    "xAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": []
+    },
+    "errors": [],
+    "labels": [],
+    "colors": [],
+    "preprocessors": []
+   }
+  ],
+  "filters": {
+   "kind": "Filters",
+   "removeNaN": true,
+   "namedFilters": []
+  },
+  "operatorSettings": {
+   "kind": "OperatorSettings",
+   "namespace": "plt_prop0",
+   "operatorRef": {
+    "kind": "OperatorRef",
+    "name": "Median and MAD",
+    "version": "0.0.3",
+    "operatorId": "8",
+    "operatorKind": "ROperator",
+    "propertyValues": [],
+    "url": {
+     "kind": "Url",
+     "uri": "https://github.com/tercen/median_mad_operator"
+    },
+    "operatorSpec": {
+     "kind": "OperatorSpec",
+     "ontologyUri": "",
+     "ontologyVersion": "",
+     "inputSpecs": [],
+     "outputSpecs": []
+    }
+   },
+   "environment": [
+    {
+     "kind": "Pair",
+     "key": "cpu",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "ram",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "cpu-shares",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "tercen.collect.stats",
+     "value": "false"
+    },
+    {
+     "kind": "Pair",
+     "key": "debug",
+     "value": "false"
+    }
+   ],
+   "operatorModel": {
+    "kind": "OperatorModel"
+   }
+  },
+  "qtHash": "",
+  "columnHash": "",
+  "rowHash": ""
+ }
+}

@@ -1,0 +1,758 @@
+{
+ "kind": "ComputedTableSchema",
+ "id": "b9aec37e05128af1e0cace0b996027c133c3c0b98c0203ebee26f7fb152402de",
+ "isDeleted": false,
+ "rev": "",
+ "description": "",
+ "name": "e612e409-5cbe-4fb5-a3fe-e5873249548d",
+ "acl": {
+  "kind": "Acl",
+  "owner": "",
+  "aces": []
+ },
+ "createdDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "lastModifiedDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "urls": [],
+ "tags": [],
+ "meta": [
+  {
+   "kind": "Pair",
+   "key": "SHA256",
+   "value": "b9aec37e05128af1e0cace0b996027c133c3c0b98c0203ebee26f7fb152402de"
+  }
+ ],
+ "url": {
+  "kind": "Url",
+  "uri": ""
+ },
+ "version": "",
+ "isPublic": false,
+ "projectId": "",
+ "folderId": "",
+ "nRows": 2,
+ "columns": [
+  {
+   "kind": "ColumnSchema",
+   "id": "69f9ce25-4898-4c2f-b2de-b108cd394b18",
+   "name": "evt_summary.filename",
+   "type": "string",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "632549da-bb6e-4858-90f0-2ece4892eb6a",
+   "name": "evt_summary.mimetype",
+   "type": "string",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "37302d65-1019-4787-8ca5-9bc6ccc60b0d",
+   "name": ".content",
+   "type": "string",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  }
+ ],
+ "dataDirectory": "data/b9/ae/b9aec37e05128af1e0cace0b996027c133c3c0b98c0203ebee26f7fb152402de",
+ "relation": {
+  "kind": "Relation",
+  "id": "ed014a13-270b-4e08-98a7-0fc463253e07"
+ },
+ "size": 8384,
+ "query": {
+  "kind": "CubeQuery",
+  "relation": {
+   "kind": "CompositeRelation",
+   "id": "9747d271-372f-4ce4-965b-30ff9dcbeb9b",
+   "joinOperators": [
+    {
+     "kind": "JoinOperator",
+     "joinType": "leftOuter",
+     "leftPair": {
+      "kind": "ColumnPair",
+      "lColumns": [
+       "filename",
+       "logicle..channel_name",
+       "logicle..channel_description"
+      ],
+      "rColumns": [
+       "filename",
+       "logicle..channel_name",
+       "logicle..channel_description"
+      ]
+     },
+     "rightRelation": {
+      "kind": "RenameRelation",
+      "id": "4dad9f49-cfb4-4a3d-8fe2-f58296d582fd",
+      "relation": {
+       "kind": "CompositeRelation",
+       "id": "0c9ff33a-3b84-4607-808f-66098b048169",
+       "joinOperators": [
+        {
+         "kind": "JoinOperator",
+         "joinType": "leftOuter",
+         "leftPair": {
+          "kind": "ColumnPair",
+          "lColumns": [
+           ".ri"
+          ],
+          "rColumns": [
+           "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7._rids"
+          ]
+         },
+         "rightRelation": {
+          "kind": "SimpleRelation",
+          "id": "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7",
+          "index": 10
+         }
+        }
+       ],
+       "mainRelation": {
+        "kind": "CompositeRelation",
+        "id": "25cb7a81-5bbe-4807-9c2d-6171d13106d3",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "leftOuter",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ci"
+           ],
+           "rColumns": [
+            "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25",
+           "index": 9
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71",
+         "index": 8
+        }
+       }
+      },
+      "inNames": [
+       ".ci",
+       ".ri",
+       "ct_evt.count",
+       "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71._rids",
+       "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71.tlbId",
+       "filename",
+       "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25._rids",
+       "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25.tlbId",
+       "logicle..channel_name",
+       "logicle..channel_description",
+       "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7._rids",
+       "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7.tlbId",
+       "filename",
+       "logicle..channel_name",
+       "logicle..channel_description"
+      ],
+      "outNames": [
+       ".ci",
+       ".ri",
+       "ct_evt.count",
+       "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71._rids",
+       "a341db15618f0a2f997d5e96acff474179e88b473615325206d59e868d7f1d71.tlbId",
+       "filename",
+       "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25._rids",
+       "e0972aff202bd6c96b96e346883a1979d089ad016f867c3922fb0295ea818c25.tlbId",
+       "logicle..channel_name",
+       "logicle..channel_description",
+       "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7._rids",
+       "554d7c9c039a19fe053cddd1315e06631f9da30024fdea5b566be061c54352c7.tlbId",
+       "ct_evt..filename",
+       "ct_evt..channel_name",
+       "ct_evt..channel_description"
+      ]
+     }
+    }
+   ],
+   "mainRelation": {
+    "kind": "CompositeRelation",
+    "id": "5616d9d2-8dce-4820-ac60-8a597fe269f5",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "leftOuter",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "channel_name",
+        "channel_description",
+        "event_id"
+       ],
+       "rColumns": [
+        "channel_name",
+        "channel_description",
+        "event_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "eb791fc6-966f-468f-b130-b74aa293f59d",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "ade90802-c4b0-4939-8f32-c50beab58a51",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "leftOuter",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6",
+           "index": 7
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "CompositeRelation",
+         "id": "30dca8fd-4f7f-463e-b6e4-003006790a13",
+         "joinOperators": [
+          {
+           "kind": "JoinOperator",
+           "joinType": "leftOuter",
+           "leftPair": {
+            "kind": "ColumnPair",
+            "lColumns": [
+             ".ci"
+            ],
+            "rColumns": [
+             "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5._rids"
+            ]
+           },
+           "rightRelation": {
+            "kind": "SimpleRelation",
+            "id": "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5",
+            "index": 6
+           }
+          }
+         ],
+         "mainRelation": {
+          "kind": "SimpleRelation",
+          "id": "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0",
+          "index": 5
+         }
+        }
+       },
+       "inNames": [
+        ".ri",
+        ".ci",
+        "logicle.value",
+        "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0._rids",
+        "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0.tlbId",
+        "channel_name",
+        "channel_description",
+        "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5._rids",
+        "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5.tlbId",
+        "event_id",
+        "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6._rids",
+        "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6.tlbId",
+        "channel_name",
+        "channel_description",
+        "event_id"
+       ],
+       "outNames": [
+        ".ri",
+        ".ci",
+        "logicle.value",
+        "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0._rids",
+        "90b0f81f4688b6314930e1521b5e861b87bdb3d57d66b95ed5ff589ce9a32fe0.tlbId",
+        "channel_name",
+        "channel_description",
+        "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5._rids",
+        "fa2d3837322be0d1e98b59a40d38cefbc5c9ccbe327f9b53131495b9ea5233c5.tlbId",
+        "event_id",
+        "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6._rids",
+        "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6.tlbId",
+        "logicle..channel_name",
+        "logicle..channel_description",
+        "logicle..event_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "CompositeRelation",
+     "id": "3c9992bd-52b6-4386-9b1c-7a9e7f608cb6",
+     "joinOperators": [
+      {
+       "kind": "JoinOperator",
+       "joinType": "leftOuter",
+       "leftPair": {
+        "kind": "ColumnPair",
+        "lColumns": [
+         "event_id"
+        ],
+        "rColumns": [
+         "event_id"
+        ]
+       },
+       "rightRelation": {
+        "kind": "RenameRelation",
+        "id": "61830001-1cb4-42d3-958b-4d1949d20195",
+        "relation": {
+         "kind": "CompositeRelation",
+         "id": "ab30fc15-69f2-4407-bfd4-6375752abb79",
+         "joinOperators": [
+          {
+           "kind": "JoinOperator",
+           "joinType": "leftOuter",
+           "leftPair": {
+            "kind": "ColumnPair",
+            "lColumns": [
+             ".ci"
+            ],
+            "rColumns": [
+             "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae._rids"
+            ]
+           },
+           "rightRelation": {
+            "kind": "SimpleRelation",
+            "id": "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae",
+            "index": 4
+           }
+          }
+         ],
+         "mainRelation": {
+          "kind": "SimpleRelation",
+          "id": "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a",
+          "index": 3
+         }
+        },
+        "inNames": [
+         ".ci",
+         "downsample.random_sequence",
+         "downsample.random_percentage",
+         "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a._rids",
+         "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a.tlbId",
+         "event_id",
+         "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae._rids",
+         "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae.tlbId",
+         "event_id"
+        ],
+        "outNames": [
+         ".ci",
+         "downsample.random_sequence",
+         "downsample.random_percentage",
+         "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a._rids",
+         "bf19816cdc677744375b17bb85fcb10c35c36ed1c55a60f3fc7dbc0e6ce4c14a.tlbId",
+         "event_id",
+         "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae._rids",
+         "d851b2b2d0a6d4d6f6cc358616b148db0514e5184886585d865dca7a8dca7bae.tlbId",
+         "downsample..event_id"
+        ]
+       }
+      }
+     ],
+     "mainRelation": {
+      "kind": "CompositeRelation",
+      "id": "53e01c9e-b999-4a2f-966e-a980debd636f",
+      "joinOperators": [
+       {
+        "kind": "JoinOperator",
+        "joinType": "leftOuter",
+        "leftPair": {
+         "kind": "ColumnPair",
+         "lColumns": [
+          "channel_id"
+         ],
+         "rColumns": [
+          "channel_id"
+         ]
+        },
+        "rightRelation": {
+         "kind": "SimpleRelation",
+         "id": "9c070af359ba3efc87d2b040dd497cbefa61a0a3e09290971949f7f4723bd488",
+         "index": 2
+        }
+       }
+      ],
+      "mainRelation": {
+       "kind": "CompositeRelation",
+       "id": "864cdf68-e858-4e17-abdc-daef134da30e",
+       "joinOperators": [
+        {
+         "kind": "JoinOperator",
+         "joinType": "leftOuter",
+         "leftPair": {
+          "kind": "ColumnPair",
+          "lColumns": [
+           "event_id"
+          ],
+          "rColumns": [
+           "event_id"
+          ]
+         },
+         "rightRelation": {
+          "kind": "SimpleRelation",
+          "id": "f9c06976750b11aabf52a5174c3141ad60184e242fb44b39f034d63315c60f4d",
+          "index": 1
+         }
+        }
+       ],
+       "mainRelation": {
+        "kind": "SimpleRelation",
+        "id": "45f684510c6bf6568cfbf3b87a4d3cbdc1a60a85c512de9cd5b28ee6cb46245d",
+        "index": 0
+       }
+      }
+     }
+    }
+   }
+  },
+  "colColumns": [
+   {
+    "kind": "Factor",
+    "name": "ct_evt..filename",
+    "type": "string"
+   }
+  ],
+  "rowColumns": [
+   {
+    "kind": "Factor",
+    "name": "ct_evt..channel_name",
+    "type": "string"
+   },
+   {
+    "kind": "Factor",
+    "name": "ct_evt..channel_description",
+    "type": "string"
+   }
+  ],
+  "axisQueries": [
+   {
+    "kind": "CubeAxisQuery",
+    "pointSize": 4,
+    "chartType": "point",
+    "yAxis": {
+     "kind": "Factor",
+     "name": "ct_evt.count",
+     "type": "double"
+    },
+    "yAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": []
+    },
+    "xAxis": {
+     "kind": "Factor",
+     "name": "",
+     "type": "string"
+    },
+    "xAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": []
+    },
+    "errors": [],
+    "labels": [],
+    "colors": [],
+    "preprocessors": []
+   }
+  ],
+  "filters": {
+   "kind": "Filters",
+   "removeNaN": true,
+   "namedFilters": [
+    {
+     "kind": "NamedFilter",
+     "logical": "or",
+     "not": true,
+     "filterExprs": [
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": ".ci",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "SSC-A",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "SSC-B-A",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "SSC-B-H",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "SSC-H",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "Time",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "LIVE DEAD Blue-A",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "Width",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "Center",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "Height",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "Area",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "FSC-A",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      },
+      {
+       "kind": "FilterExpr",
+       "filterOp": "equals",
+       "stringValue": "FSC-H",
+       "factor": {
+        "kind": "Factor",
+        "name": "channel_name",
+        "type": "string"
+       },
+       "preProcessors": []
+      }
+     ],
+     "meta": [],
+     "name": "Exclude QC Channels"
+    },
+    {
+     "kind": "NamedFilter",
+     "logical": "and",
+     "not": false,
+     "filterExprs": [
+      {
+       "kind": "FilterExpr",
+       "filterOp": "lesseq",
+       "stringValue": "100",
+       "factor": {
+        "kind": "Factor",
+        "name": "downsample.random_percentage",
+        "type": "double"
+       },
+       "preProcessors": []
+      }
+     ],
+     "meta": [],
+     "name": "downsample.random_percentage"
+    },
+    {
+     "kind": "NamedFilter",
+     "logical": "and",
+     "not": false,
+     "filterExprs": [
+      {
+       "kind": "FilterExpr",
+       "filterOp": "less",
+       "stringValue": "1000000",
+       "factor": {
+        "kind": "Factor",
+        "name": "downsample.random_sequence",
+        "type": "double"
+       },
+       "preProcessors": []
+      }
+     ],
+     "meta": [],
+     "name": "downsample.random_sequence"
+    }
+   ]
+  },
+  "operatorSettings": {
+   "kind": "OperatorSettings",
+   "namespace": "evt_summary",
+   "operatorRef": {
+    "kind": "OperatorRef",
+    "name": "Add Table to Report",
+    "version": "0.1.1",
+    "operatorId": "7",
+    "operatorKind": "DockerOperator",
+    "propertyValues": [
+     {
+      "kind": "PropertyValue",
+      "name": "Rounding",
+      "value": "3"
+     }
+    ],
+    "url": {
+     "kind": "Url",
+     "uri": "https://github.com/tercen/report_table_operator"
+    },
+    "operatorSpec": {
+     "kind": "OperatorSpec",
+     "ontologyUri": "",
+     "ontologyVersion": "",
+     "inputSpecs": [],
+     "outputSpecs": []
+    }
+   },
+   "environment": [
+    {
+     "kind": "Pair",
+     "key": "cpu",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "ram",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "cpu-shares",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "tercen.collect.stats",
+     "value": "false"
+    },
+    {
+     "kind": "Pair",
+     "key": "debug",
+     "value": "false"
+    }
+   ],
+   "operatorModel": {
+    "kind": "OperatorModel"
+   }
+  },
+  "qtHash": "",
+  "columnHash": "",
+  "rowHash": ""
+ }
+}
