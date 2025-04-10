@@ -1,0 +1,134 @@
+{
+ "kind": "CubeQueryTableSchema",
+ "id": "0bbabff07fdc4afd8894040ebc655c18f09edad616aaa9b1c22835c9ecf603a7",
+ "isDeleted": false,
+ "rev": "",
+ "description": "",
+ "name": "column",
+ "acl": {
+  "kind": "Acl",
+  "owner": "",
+  "aces": []
+ },
+ "createdDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "lastModifiedDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "urls": [],
+ "tags": [],
+ "meta": [
+  {
+   "kind": "Pair",
+   "key": "logicle..channel_description.size_in_bytes",
+   "value": "760"
+  },
+  {
+   "kind": "Pair",
+   "key": "logicle..channel_name.size_in_bytes",
+   "value": "976"
+  },
+  {
+   "kind": "Pair",
+   "key": "SHA256",
+   "value": "0bbabff07fdc4afd8894040ebc655c18f09edad616aaa9b1c22835c9ecf603a7"
+  }
+ ],
+ "url": {
+  "kind": "Url",
+  "uri": ""
+ },
+ "version": "",
+ "isPublic": false,
+ "projectId": "",
+ "folderId": "",
+ "nRows": 47,
+ "columns": [
+  {
+   "kind": "ColumnSchema",
+   "id": "e67bb20b-3bd9-41f5-a6df-6b9112c6f359",
+   "name": "logicle..channel_name",
+   "type": "string",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "1fe3d37c-810a-4614-91ea-b401099f7133",
+   "name": "logicle..channel_description",
+   "type": "string",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  }
+ ],
+ "dataDirectory": "data/0b/ba/0bbabff07fdc4afd8894040ebc655c18f09edad616aaa9b1c22835c9ecf603a7",
+ "relation": {
+  "kind": "Relation",
+  "id": "8d84b25b-d097-4539-8e46-6f9237f62d65"
+ },
+ "size": 17472,
+ "queryHash": "eefd8c6086484baffedb2a57543ad271",
+ "queryTableType": "column",
+ "query": {
+  "kind": "CubeQuery",
+  "relation": {
+   "kind": "Relation",
+   "id": "449c8a24-20ce-4545-ae95-20049dc0056b"
+  },
+  "colColumns": [],
+  "rowColumns": [],
+  "axisQueries": [],
+  "filters": {
+   "kind": "Filters",
+   "removeNaN": true,
+   "namedFilters": []
+  },
+  "operatorSettings": {
+   "kind": "OperatorSettings",
+   "namespace": "",
+   "operatorRef": {
+    "kind": "OperatorRef",
+    "name": "",
+    "version": "",
+    "operatorId": "",
+    "operatorKind": "",
+    "propertyValues": [],
+    "url": {
+     "kind": "Url",
+     "uri": ""
+    },
+    "operatorSpec": {
+     "kind": "OperatorSpec",
+     "ontologyUri": "",
+     "ontologyVersion": "",
+     "inputSpecs": [],
+     "outputSpecs": []
+    }
+   },
+   "environment": [],
+   "operatorModel": {
+    "kind": "OperatorModel"
+   }
+  },
+  "qtHash": "",
+  "columnHash": "",
+  "rowHash": ""
+ }
+}

@@ -96,7 +96,7 @@
    "id": "7dac65b6-cebb-4359-98b7-588eca130bcb",
    "relation": {
     "kind": "InMemoryRelation",
-    "id": "9c36a697-824c-45bb-ae79-27a9f26a693b",
+    "id": "abad7f3f-5d8f-4eff-91ce-5c49806dbee6",
     "inMemoryTable": {
      "kind": "Table",
      "nRows": 1,

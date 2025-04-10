@@ -1,0 +1,482 @@
+{
+ "kind": "ComputedTableSchema",
+ "id": "31de2f4f5f705d52768e4df82c248f4a6ee3eb92eae77dcb3eb82e8bc15a3e3d",
+ "isDeleted": false,
+ "rev": "",
+ "description": "",
+ "name": "4f171264-4d50-44ea-bb49-7df36285cc34",
+ "acl": {
+  "kind": "Acl",
+  "owner": "",
+  "aces": []
+ },
+ "createdDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "lastModifiedDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "urls": [],
+ "tags": [],
+ "meta": [
+  {
+   "kind": "Pair",
+   "key": "SHA256",
+   "value": "31de2f4f5f705d52768e4df82c248f4a6ee3eb92eae77dcb3eb82e8bc15a3e3d"
+  }
+ ],
+ "url": {
+  "kind": "Url",
+  "uri": ""
+ },
+ "version": "",
+ "isPublic": false,
+ "projectId": "",
+ "folderId": "",
+ "nRows": 2,
+ "columns": [
+  {
+   "kind": "ColumnSchema",
+   "id": "baa552c8-f2b5-4ca5-b214-cc5b173c6f7e",
+   "name": "distrib1.filename",
+   "type": "string",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "aba369e4-2a33-45a4-bace-e6db24f777a0",
+   "name": "distrib1.mimetype",
+   "type": "string",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "146648d0-20d2-4464-bbb2-8c580a2b2b4f",
+   "name": ".content",
+   "type": "string",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "f1d36eaf-44c8-4362-b22d-abd9c9cb6909",
+   "name": "distrib1.plot_width",
+   "type": "double",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "fd084c13-9bf5-4d54-aa11-c935d00e76b2",
+   "name": "distrib1.plot_height",
+   "type": "double",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  }
+ ],
+ "dataDirectory": "data/31/de/31de2f4f5f705d52768e4df82c248f4a6ee3eb92eae77dcb3eb82e8bc15a3e3d",
+ "relation": {
+  "kind": "Relation",
+  "id": "9071c98f-edcf-42de-abf2-07461c9d6320"
+ },
+ "size": 296128,
+ "query": {
+  "kind": "CubeQuery",
+  "relation": {
+   "kind": "RenameRelation",
+   "id": "4167a3c4-a37d-4497-9399-e4a2bd519d6d",
+   "relation": {
+    "kind": "CompositeRelation",
+    "id": "48da6171-0d8e-47e8-9d64-67134afced59",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "leftOuter",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        ".ri"
+       ],
+       "rColumns": [
+        "721cbae2ceb9f8581a99be2f55618efb38cafbc93c2d54d4acf3f77eefafc3ed._rids"
+       ]
+      },
+      "rightRelation": {
+       "kind": "SimpleRelation",
+       "id": "721cbae2ceb9f8581a99be2f55618efb38cafbc93c2d54d4acf3f77eefafc3ed",
+       "index": 1
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "SimpleRelation",
+     "id": "f398c7cf1fb4137a4207b76953de268fa4c7a032b21ca8ec10b448d22b83673b",
+     "index": 0
+    }
+   },
+   "inNames": [
+    "hist.counts",
+    "hist.density",
+    "hist.mids",
+    "hist.bins",
+    ".ri",
+    "f398c7cf1fb4137a4207b76953de268fa4c7a032b21ca8ec10b448d22b83673b._rids",
+    "f398c7cf1fb4137a4207b76953de268fa4c7a032b21ca8ec10b448d22b83673b.tlbId",
+    "logicle..channel_description",
+    "721cbae2ceb9f8581a99be2f55618efb38cafbc93c2d54d4acf3f77eefafc3ed._rids",
+    "721cbae2ceb9f8581a99be2f55618efb38cafbc93c2d54d4acf3f77eefafc3ed.tlbId",
+    "logicle..channel_description"
+   ],
+   "outNames": [
+    "hist.counts",
+    "hist.density",
+    "hist.mids",
+    "hist.bins",
+    ".ri",
+    "f398c7cf1fb4137a4207b76953de268fa4c7a032b21ca8ec10b448d22b83673b._rids",
+    "f398c7cf1fb4137a4207b76953de268fa4c7a032b21ca8ec10b448d22b83673b.tlbId",
+    "logicle..channel_description",
+    "721cbae2ceb9f8581a99be2f55618efb38cafbc93c2d54d4acf3f77eefafc3ed._rids",
+    "721cbae2ceb9f8581a99be2f55618efb38cafbc93c2d54d4acf3f77eefafc3ed.tlbId",
+    "hist..channel_description"
+   ]
+  },
+  "colColumns": [],
+  "rowColumns": [
+   {
+    "kind": "Factor",
+    "name": "hist..channel_description",
+    "type": "string"
+   }
+  ],
+  "axisQueries": [
+   {
+    "kind": "CubeAxisQuery",
+    "pointSize": 2,
+    "chartType": "line",
+    "yAxis": {
+     "kind": "Factor",
+     "name": "hist.counts",
+     "type": "double"
+    },
+    "yAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": [
+      {
+       "kind": "Pair",
+       "key": "axisType",
+       "value": "row"
+      },
+      {
+       "kind": "Pair",
+       "key": "includeZero",
+       "value": "true"
+      }
+     ]
+    },
+    "xAxis": {
+     "kind": "Factor",
+     "name": "hist.mids",
+     "type": "double"
+    },
+    "xAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": []
+    },
+    "errors": [],
+    "labels": [],
+    "colors": [],
+    "preprocessors": []
+   }
+  ],
+  "filters": {
+   "kind": "Filters",
+   "removeNaN": true,
+   "namedFilters": []
+  },
+  "operatorSettings": {
+   "kind": "OperatorSettings",
+   "namespace": "distrib1",
+   "operatorRef": {
+    "kind": "OperatorRef",
+    "name": "Plot",
+    "version": "0.3.8",
+    "operatorId": "1",
+    "operatorKind": "ROperator",
+    "propertyValues": [
+     {
+      "kind": "PropertyValue",
+      "name": "plot_type",
+      "value": "png"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "file.name.prefix",
+      "value": "Tercen_Marker_Distribution_Logicle"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "plot.width",
+      "value": ""
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "plot.height",
+      "value": ""
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "base.size",
+      "value": "9"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "x_range",
+      "value": ""
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "y_range",
+      "value": ""
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "xlab",
+      "value": "Value"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "ylab",
+      "value": "Density"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "title",
+      "value": "Marker distributions"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "subtitle",
+      "value": "Logicle transformation"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "caption",
+      "value": ""
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "legend.title",
+      "value": ""
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "bar.position",
+      "value": "dodge"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "theme",
+      "value": "light"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "scales",
+      "value": "fixed"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "color_scales",
+      "value": "fixed"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "rotate_x_axis",
+      "value": "false"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "wrap.1d",
+      "value": "true"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "flip",
+      "value": "false"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "split_cells",
+      "value": "false"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "n_cells_max",
+      "value": "50"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "heatmap_annotation",
+      "value": "none"
+     },
+     {
+      "kind": "PropertyValue",
+      "name": "default.color",
+      "value": "#36454f"
+     }
+    ],
+    "url": {
+     "kind": "Url",
+     "uri": "https://github.com/tercen/plot_operator"
+    },
+    "operatorSpec": {
+     "kind": "OperatorSpec",
+     "ontologyUri": "https://tercen.com/_ontology/tercen",
+     "ontologyVersion": "0.0.1",
+     "inputSpecs": [
+      {
+       "kind": "CrosstabSpec",
+       "metaFactors": [
+        {
+         "kind": "MetaFactor",
+         "name": "Page",
+         "type": "",
+         "description": "These factor(s) will be used to produce one plot file per category.",
+         "ontologyMapping": "page",
+         "crosstabMapping": "row",
+         "cardinality": "",
+         "factors": []
+        },
+        {
+         "kind": "MetaFactor",
+         "name": "Rows",
+         "type": "",
+         "description": "Factor(s) to stratify per row.",
+         "ontologyMapping": "sample",
+         "crosstabMapping": "row",
+         "cardinality": "",
+         "factors": []
+        },
+        {
+         "kind": "MetaFactor",
+         "name": "Columns",
+         "type": "",
+         "description": "Factor(s) to stratify per column.",
+         "ontologyMapping": "variable",
+         "crosstabMapping": "column",
+         "cardinality": "",
+         "factors": []
+        }
+       ],
+       "axis": [
+        {
+         "kind": "AxisSpec",
+         "metaFactors": [
+          {
+           "kind": "MetaFactor",
+           "name": "Y Axis",
+           "type": "numeric",
+           "description": "Factor to use for the graph's Y axis.",
+           "ontologyMapping": "y-axis",
+           "crosstabMapping": "y",
+           "cardinality": "1",
+           "factors": []
+          },
+          {
+           "kind": "MetaFactor",
+           "name": "X Axis",
+           "type": "",
+           "description": "Factor to use for the graph's X axis.",
+           "ontologyMapping": "x-axis",
+           "crosstabMapping": "x",
+           "cardinality": "1",
+           "factors": []
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "outputSpecs": []
+    }
+   },
+   "environment": [
+    {
+     "kind": "Pair",
+     "key": "cpu",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "ram",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "cpu-shares",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "tercen.collect.stats",
+     "value": "false"
+    },
+    {
+     "kind": "Pair",
+     "key": "debug",
+     "value": "false"
+    },
+    {
+     "kind": "Pair",
+     "key": "preferred.run.ctx",
+     "value": ""
+    }
+   ],
+   "operatorModel": {
+    "kind": "OperatorModel"
+   }
+  },
+  "qtHash": "",
+  "columnHash": "",
+  "rowHash": ""
+ }
+}

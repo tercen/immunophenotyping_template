@@ -1,0 +1,360 @@
+{
+ "kind": "ComputedTableSchema",
+ "id": "f2a47d7a9e85423cf34d3f4d597532c0185576d0556a64970c15dfe51c2428cc",
+ "isDeleted": false,
+ "rev": "",
+ "description": "",
+ "name": "4c588160-160d-11f0-ba75-bd093be65276",
+ "acl": {
+  "kind": "Acl",
+  "owner": "",
+  "aces": []
+ },
+ "createdDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "lastModifiedDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "urls": [],
+ "tags": [],
+ "meta": [
+  {
+   "kind": "Pair",
+   "key": "SHA256",
+   "value": "f2a47d7a9e85423cf34d3f4d597532c0185576d0556a64970c15dfe51c2428cc"
+  }
+ ],
+ "url": {
+  "kind": "Url",
+  "uri": ""
+ },
+ "version": "",
+ "isPublic": false,
+ "projectId": "",
+ "folderId": "",
+ "nRows": 14,
+ "columns": [
+  {
+   "kind": "ColumnSchema",
+   "id": "179abc86-29bd-4f61-9037-6c8eb356569f",
+   "name": ".ri",
+   "type": "int32",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "e3dd4533-05f4-47ce-8064-12f7ceb53c2c",
+   "name": "centroid.mean_y",
+   "type": "double",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "8cde02e3-3d90-42a8-a9f6-69191ac39010",
+   "name": "centroid.mean_x",
+   "type": "double",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  }
+ ],
+ "dataDirectory": "data/f2/a4/f2a47d7a9e85423cf34d3f4d597532c0185576d0556a64970c15dfe51c2428cc",
+ "relation": {
+  "kind": "Relation",
+  "id": "f4b27fbc-f6c2-4008-94e3-0edde145fb58"
+ },
+ "size": 496,
+ "query": {
+  "kind": "CubeQuery",
+  "relation": {
+   "kind": "CompositeRelation",
+   "id": "77dd323c-9faf-4273-8cf1-3bcec8c6fcfa",
+   "joinOperators": [
+    {
+     "kind": "JoinOperator",
+     "joinType": "leftOuter",
+     "leftPair": {
+      "kind": "ColumnPair",
+      "lColumns": [
+       "logicle..event_id"
+      ],
+      "rColumns": [
+       "logicle..event_id"
+      ]
+     },
+     "rightRelation": {
+      "kind": "RenameRelation",
+      "id": "eb27a2b0-8cb2-438a-84b1-b099719d55a5",
+      "relation": {
+       "kind": "CompositeRelation",
+       "id": "1a5be600-199b-405a-b964-9dd0e3e98cf4",
+       "joinOperators": [
+        {
+         "kind": "JoinOperator",
+         "joinType": "leftOuter",
+         "leftPair": {
+          "kind": "ColumnPair",
+          "lColumns": [
+           ".ri"
+          ],
+          "rColumns": [
+           "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1._rids"
+          ]
+         },
+         "rightRelation": {
+          "kind": "SimpleRelation",
+          "id": "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1",
+          "index": 4
+         }
+        }
+       ],
+       "mainRelation": {
+        "kind": "SimpleRelation",
+        "id": "3fe76712c40a73ff32ccf2d1bea1f25f58ea32e4ec69457879887350e905b1a2",
+        "index": 3
+       }
+      },
+      "inNames": [
+       "umap.umap.1",
+       "umap.umap.2",
+       ".ri",
+       "3fe76712c40a73ff32ccf2d1bea1f25f58ea32e4ec69457879887350e905b1a2._rids",
+       "3fe76712c40a73ff32ccf2d1bea1f25f58ea32e4ec69457879887350e905b1a2.tlbId",
+       "logicle..event_id",
+       "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1._rids",
+       "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1.tlbId",
+       "logicle..event_id"
+      ],
+      "outNames": [
+       "umap.umap.1",
+       "umap.umap.2",
+       ".ri",
+       "3fe76712c40a73ff32ccf2d1bea1f25f58ea32e4ec69457879887350e905b1a2._rids",
+       "3fe76712c40a73ff32ccf2d1bea1f25f58ea32e4ec69457879887350e905b1a2.tlbId",
+       "logicle..event_id",
+       "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1._rids",
+       "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1.tlbId",
+       "umap..event_id"
+      ]
+     }
+    }
+   ],
+   "mainRelation": {
+    "kind": "CompositeRelation",
+    "id": "80df1b8f-76e8-4aeb-a400-8ffb8fc79f25",
+    "joinOperators": [
+     {
+      "kind": "JoinOperator",
+      "joinType": "leftOuter",
+      "leftPair": {
+       "kind": "ColumnPair",
+       "lColumns": [
+        "logicle..event_id"
+       ],
+       "rColumns": [
+        "logicle..event_id"
+       ]
+      },
+      "rightRelation": {
+       "kind": "RenameRelation",
+       "id": "f59462b5-d270-40de-8d95-96cb02ff8f48",
+       "relation": {
+        "kind": "CompositeRelation",
+        "id": "a9d0d93c-dbe8-45c7-a003-6fe015b60b4a",
+        "joinOperators": [
+         {
+          "kind": "JoinOperator",
+          "joinType": "leftOuter",
+          "leftPair": {
+           "kind": "ColumnPair",
+           "lColumns": [
+            ".ri"
+           ],
+           "rColumns": [
+            "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1._rids"
+           ]
+          },
+          "rightRelation": {
+           "kind": "SimpleRelation",
+           "id": "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1",
+           "index": 2
+          }
+         }
+        ],
+        "mainRelation": {
+         "kind": "SimpleRelation",
+         "id": "6f5b44ab0695f40a2dd6f028e801c58124075d8ed0ec79afa1879b7ba6bb2f37",
+         "index": 1
+        }
+       },
+       "inNames": [
+        ".ri",
+        "clust.cluster_id",
+        "6f5b44ab0695f40a2dd6f028e801c58124075d8ed0ec79afa1879b7ba6bb2f37._rids",
+        "6f5b44ab0695f40a2dd6f028e801c58124075d8ed0ec79afa1879b7ba6bb2f37.tlbId",
+        "logicle..event_id",
+        "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1._rids",
+        "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1.tlbId",
+        "logicle..event_id"
+       ],
+       "outNames": [
+        ".ri",
+        "clust.cluster_id",
+        "6f5b44ab0695f40a2dd6f028e801c58124075d8ed0ec79afa1879b7ba6bb2f37._rids",
+        "6f5b44ab0695f40a2dd6f028e801c58124075d8ed0ec79afa1879b7ba6bb2f37.tlbId",
+        "logicle..event_id",
+        "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1._rids",
+        "7230cb96c96301efc16acb6db77cba1cb08acc75733eff2d42eb9081f7433390-1.tlbId",
+        "clust..event_id"
+       ]
+      }
+     }
+    ],
+    "mainRelation": {
+     "kind": "RenameRelation",
+     "id": "fbd0f2f8-7a9b-4b4b-919e-f39ef918e36a",
+     "relation": {
+      "kind": "SimpleRelation",
+      "id": "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6",
+      "index": 0
+     },
+     "inNames": [
+      "event_id",
+      "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6._rids",
+      "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6.tlbId",
+      "event_id"
+     ],
+     "outNames": [
+      "event_id",
+      "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6._rids",
+      "01674683a0e0077a672fe5d8f47659c338a17f74701b346efe0d04e5e31abfc6.tlbId",
+      "logicle..event_id"
+     ]
+    }
+   }
+  },
+  "colColumns": [],
+  "rowColumns": [
+   {
+    "kind": "Factor",
+    "name": "clust.cluster_id",
+    "type": "string"
+   }
+  ],
+  "axisQueries": [
+   {
+    "kind": "CubeAxisQuery",
+    "pointSize": 4,
+    "chartType": "point",
+    "yAxis": {
+     "kind": "Factor",
+     "name": "umap.umap.2",
+     "type": "double"
+    },
+    "yAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": []
+    },
+    "xAxis": {
+     "kind": "Factor",
+     "name": "umap.umap.1",
+     "type": "double"
+    },
+    "xAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": []
+    },
+    "errors": [],
+    "labels": [],
+    "colors": [],
+    "preprocessors": []
+   }
+  ],
+  "filters": {
+   "kind": "Filters",
+   "removeNaN": true,
+   "namedFilters": []
+  },
+  "operatorSettings": {
+   "kind": "OperatorSettings",
+   "namespace": "centroid",
+   "operatorRef": {
+    "kind": "OperatorRef",
+    "name": "Mean",
+    "version": "1.3.2",
+    "operatorId": "2",
+    "operatorKind": "ROperator",
+    "propertyValues": [],
+    "url": {
+     "kind": "Url",
+     "uri": "https://github.com/tercen/mean_operator"
+    },
+    "operatorSpec": {
+     "kind": "OperatorSpec",
+     "ontologyUri": "",
+     "ontologyVersion": "",
+     "inputSpecs": [],
+     "outputSpecs": []
+    }
+   },
+   "environment": [
+    {
+     "kind": "Pair",
+     "key": "cpu",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "ram",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "cpu-shares",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "tercen.collect.stats",
+     "value": "false"
+    },
+    {
+     "kind": "Pair",
+     "key": "debug",
+     "value": "false"
+    }
+   ],
+   "operatorModel": {
+    "kind": "OperatorModel"
+   }
+  },
+  "qtHash": "",
+  "columnHash": "",
+  "rowHash": ""
+ }
+}

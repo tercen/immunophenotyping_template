@@ -1,0 +1,299 @@
+{
+ "kind": "ComputedTableSchema",
+ "id": "9b559de3f5f2926bc6d6ff0a2fb5d64a5573736acad1169c72041ec1a700df8e",
+ "isDeleted": false,
+ "rev": "",
+ "description": "",
+ "name": "874351c0-160c-11f0-ba75-bd093be65276",
+ "acl": {
+  "kind": "Acl",
+  "owner": "",
+  "aces": []
+ },
+ "createdDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "lastModifiedDate": {
+  "kind": "Date",
+  "value": ""
+ },
+ "urls": [],
+ "tags": [],
+ "meta": [
+  {
+   "kind": "Pair",
+   "key": "SHA256",
+   "value": "9b559de3f5f2926bc6d6ff0a2fb5d64a5573736acad1169c72041ec1a700df8e"
+  }
+ ],
+ "url": {
+  "kind": "Url",
+  "uri": ""
+ },
+ "version": "",
+ "isPublic": false,
+ "projectId": "",
+ "folderId": "",
+ "nRows": 188000,
+ "columns": [
+  {
+   "kind": "ColumnSchema",
+   "id": "6e1e8c6e-1265-4479-88bf-06703a7fb829",
+   "name": ".ri",
+   "type": "int32",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "dd2da26e-9c16-432d-844c-d2dd250895ca",
+   "name": ".ci",
+   "type": "int32",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  },
+  {
+   "kind": "ColumnSchema",
+   "id": "c3fa00d9-c057-455d-aef2-ace56a3a70d2",
+   "name": "logicle.value",
+   "type": "double",
+   "nRows": 0,
+   "size": -1,
+   "metaData": {
+    "kind": "ColumnSchemaMetaData",
+    "sort": [],
+    "ascending": true,
+    "quartiles": [],
+    "properties": []
+   }
+  }
+ ],
+ "dataDirectory": "data/9b/55/9b559de3f5f2926bc6d6ff0a2fb5d64a5573736acad1169c72041ec1a700df8e",
+ "relation": {
+  "kind": "Relation",
+  "id": "23bc1135-400d-42e2-a893-4c4e777fab1c"
+ },
+ "size": 1700136,
+ "query": {
+  "kind": "CubeQuery",
+  "relation": {
+   "kind": "CompositeRelation",
+   "id": "721ee28f-c8a0-4ff1-afc1-d1fcc0d6ed78",
+   "joinOperators": [
+    {
+     "kind": "JoinOperator",
+     "joinType": "leftOuter",
+     "leftPair": {
+      "kind": "ColumnPair",
+      "lColumns": [
+       "channel_id"
+      ],
+      "rColumns": [
+       "channel_id"
+      ]
+     },
+     "rightRelation": {
+      "kind": "SimpleRelation",
+      "id": "9c070af359ba3efc87d2b040dd497cbefa61a0a3e09290971949f7f4723bd488",
+      "index": 1
+     }
+    }
+   ],
+   "mainRelation": {
+    "kind": "SimpleRelation",
+    "id": "45f684510c6bf6568cfbf3b87a4d3cbdc1a60a85c512de9cd5b28ee6cb46245d",
+    "index": 0
+   }
+  },
+  "colColumns": [
+   {
+    "kind": "Factor",
+    "name": "channel_name",
+    "type": "string"
+   },
+   {
+    "kind": "Factor",
+    "name": "channel_description",
+    "type": "string"
+   }
+  ],
+  "rowColumns": [
+   {
+    "kind": "Factor",
+    "name": "event_id",
+    "type": "double"
+   }
+  ],
+  "axisQueries": [
+   {
+    "kind": "CubeAxisQuery",
+    "pointSize": 4,
+    "chartType": "point",
+    "yAxis": {
+     "kind": "Factor",
+     "name": "value",
+     "type": "double"
+    },
+    "yAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": []
+    },
+    "xAxis": {
+     "kind": "Factor",
+     "name": "",
+     "type": "string"
+    },
+    "xAxisSettings": {
+     "kind": "AxisSettings",
+     "meta": []
+    },
+    "errors": [],
+    "labels": [],
+    "colors": [],
+    "preprocessors": []
+   }
+  ],
+  "filters": {
+   "kind": "Filters",
+   "removeNaN": true,
+   "namedFilters": []
+  },
+  "operatorSettings": {
+   "kind": "OperatorSettings",
+   "namespace": "logicle",
+   "operatorRef": {
+    "kind": "OperatorRef",
+    "name": "Logicle",
+    "version": "ca6ec8fc51469f044951683202110cf209839464",
+    "operatorId": "17",
+    "operatorKind": "ROperator",
+    "propertyValues": [],
+    "url": {
+     "kind": "Url",
+     "uri": "https://github.com/tercen/logicle_operator"
+    },
+    "operatorSpec": {
+     "kind": "OperatorSpec",
+     "ontologyUri": "https://tercen.com/_ontology/tercen",
+     "ontologyVersion": "0.0.1",
+     "inputSpecs": [
+      {
+       "kind": "CrosstabSpec",
+       "metaFactors": [
+        {
+         "kind": "MetaFactor",
+         "name": "Channel",
+         "type": "",
+         "description": "The channel identifiers",
+         "ontologyMapping": "variable",
+         "crosstabMapping": "column",
+         "cardinality": "1..n",
+         "factors": [
+          {
+           "kind": "Factor",
+           "name": "channel_name",
+           "type": "string"
+          },
+          {
+           "kind": "Factor",
+           "name": "channel_description",
+           "type": "string"
+          }
+         ]
+        },
+        {
+         "kind": "MetaFactor",
+         "name": "events",
+         "type": "",
+         "description": "the observations",
+         "ontologyMapping": "observation",
+         "crosstabMapping": "row",
+         "cardinality": "1..n",
+         "factors": [
+          {
+           "kind": "Factor",
+           "name": "event_id",
+           "type": "double"
+          }
+         ]
+        }
+       ],
+       "axis": [
+        {
+         "kind": "AxisSpec",
+         "metaFactors": [
+          {
+           "kind": "MetaFactor",
+           "name": "data",
+           "type": "numeric",
+           "description": "the measurements",
+           "ontologyMapping": "measurement",
+           "crosstabMapping": "y",
+           "cardinality": "1",
+           "factors": [
+            {
+             "kind": "Factor",
+             "name": "value",
+             "type": "double"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "outputSpecs": []
+    }
+   },
+   "environment": [
+    {
+     "kind": "Pair",
+     "key": "cpu",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "ram",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "cpu-shares",
+     "value": "0"
+    },
+    {
+     "kind": "Pair",
+     "key": "tercen.collect.stats",
+     "value": "false"
+    },
+    {
+     "kind": "Pair",
+     "key": "debug",
+     "value": "false"
+    }
+   ],
+   "operatorModel": {
+    "kind": "OperatorModel"
+   }
+  },
+  "qtHash": "",
+  "columnHash": "",
+  "rowHash": ""
+ }
+}
