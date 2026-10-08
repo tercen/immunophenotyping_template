@@ -36,7 +36,7 @@
  "version": "",
  "isPublic": false,
  "projectId": "",
- "folderId": "16",
+ "folderId": "18",
  "nRows": 4,
  "columns": [
   {
@@ -52,7 +52,8 @@
     "ascending": true,
     "quartiles": [],
     "properties": []
-   }
+   },
+   "storageSize": 0.0
   },
   {
    "kind": "ColumnSchema",
@@ -67,7 +68,8 @@
     "ascending": true,
     "quartiles": [],
     "properties": []
-   }
+   },
+   "storageSize": 0.0
   }
  ],
  "dataDirectory": "data/6f/7c/6f7ccffd77e2b966d986b5afe9d23542a6baed390bebae1d3c175dde4c0a67cd",
@@ -75,5 +77,6 @@
   "kind": "Relation",
   "id": "d04ba2ea-a676-46c8-bb7a-388880e70704"
  },
- "size": 392
+ "size": 392,
+ "storageSize": 392.0
 }
